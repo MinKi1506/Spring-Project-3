@@ -1,14 +1,15 @@
 package com.example.minki.login.controller;
 
-import com.example.minki.login.model.vo.UserVo;
+import com.example.minki.login.model.entity.UserEntity;
+import com.example.minki.login.model.vo.UserSignInVo;
+import com.example.minki.login.model.vo.UserSignUpVo;
 import com.example.minki.login.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -20,9 +21,18 @@ public class UserController {
     @Autowired
     private final UserService userService;
 
+    //회원가입
     @PostMapping("/signUp")
-    public void signUpUser(@RequestBody @Valid UserVo userVo) throws Exception{
-        userService.signUpUser(userVo);
+    public void signUp(@RequestBody UserSignUpVo userSignUpVo) throws Exception{
+        userService.signUp(userSignUpVo);
+    }
+
+    //로그인
+    @PostMapping("/signIn")
+    public Long signIn(@RequestBody UserSignInVo userSignInVo){
+        Long result;
+        result = userService.signIn(userSignInVo.getEmail(), userSignInVo.getPassword());
+        return result;
     }
 
 }

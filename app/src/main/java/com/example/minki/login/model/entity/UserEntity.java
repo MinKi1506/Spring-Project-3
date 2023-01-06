@@ -1,6 +1,7 @@
 package com.example.minki.login.model.entity;
 
-import com.example.minki.login.model.vo.UserVo;
+import com.example.minki.login.model.vo.UserSignInVo;
+import com.example.minki.login.model.vo.UserSignUpVo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,21 +19,15 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@DynamicInsert
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ColumnDefault("default value")
     private String name;
-
-    @ColumnDefault("default value")
     private int age;
 
-    @ColumnDefault("default value")
     private int gender;
-    @ColumnDefault("default value")
     private String team;
     private String email;
     private String password;
@@ -57,17 +52,19 @@ public class UserEntity {
         this.password = password;
     }
 
-    public static UserEntity createUser(UserVo userVo){
-        return new UserEntity(userVo);
-    }
-
-
-
     //VO를 Entity화 시키는 메소드
-    public UserEntity(UserVo userVo){
-        this.name = userVo.getName();
-        this.email = userVo.getEmail();
-        this.password = userVo.getPassword();
+    public UserEntity(UserSignUpVo userSignUpVo){
+        this.name = userSignUpVo.getName();
+        this.email = userSignUpVo.getEmail();
+        this.password = userSignUpVo.getPassword();
     }
 
+    public UserEntity(UserSignInVo userSignInVo){
+        this.email = userSignInVo.getEmail();
+        this.password = userSignInVo.getPassword();
+    }
+
+    public boolean checkPassword(String password){
+        return this.password.equals(password);
+    }
 }

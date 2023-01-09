@@ -6,8 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,7 +31,7 @@ public class UserEntity {
     private String password;
 
     @Builder // builder = 클래스 자동생성 -> 생성자 대신 사용
-    public UserEntity(String name, int age, int gender, String team, String email, String password){
+    public UserEntity(String name, int age, int gender, String team, String email, String password) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -43,7 +41,7 @@ public class UserEntity {
     }
 
     //유저 정보 수정 메소드
-    public void update(String name, int age, int gender, String team, String email, String password){
+    public void update(String name, int age, int gender, String team, String email, String password) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -52,19 +50,15 @@ public class UserEntity {
         this.password = password;
     }
 
-    //VO를 Entity화 시키는 메소드
-    public UserEntity(UserSignUpVo userSignUpVo){
+    //VO를 Entity화 시키는 생성자
+    public UserEntity(UserSignUpVo userSignUpVo) {
         this.name = userSignUpVo.getName();
         this.email = userSignUpVo.getEmail();
         this.password = userSignUpVo.getPassword();
     }
 
-    public UserEntity(UserSignInVo userSignInVo){
+    public UserEntity(UserSignInVo userSignInVo) {
         this.email = userSignInVo.getEmail();
         this.password = userSignInVo.getPassword();
-    }
-
-    public boolean checkPassword(String password){
-        return this.password.equals(password);
     }
 }

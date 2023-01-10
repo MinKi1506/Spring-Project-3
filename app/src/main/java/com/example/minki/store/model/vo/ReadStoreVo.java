@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
 public class ReadStoreVo {
 
     private String title;
-    private LocalDateTime editDate;
+    private LocalDateTime createdDateTime;
     private String content;
     private int travelTime;
 
     //Entity를 Vo화 시키는 생성자
     public ReadStoreVo(StoreEntity storeEntity){
         this.title = storeEntity.getTitle();
-        this.editDate = storeEntity.getEditDate();
+        this.createdDateTime = storeEntity.getCreatedDateTime();
         this.content = storeEntity.getContent();
         this.travelTime = storeEntity.getTravelTime();
     }

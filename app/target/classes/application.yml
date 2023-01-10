@@ -1,12 +1,21 @@
+#spring:
+#    datasource:
+#        url: jdbc:mariadb://localhost:3306/project3
+#        driver-class-name: org.mariadb.jdbc.Driver
+#        username: root
+#        password: 6639
+#    jpa:
+#        open-in-view: false
+#        generate-ddl: true
+#        show-sql: true
+#        hibernate:
+#            ddl-auto: update
 spring:
-    datasource:
-        url: jdbc:mariadb://localhost:3306/project3
-        driver-class-name: org.mariadb.jdbc.Driver
-        username: root
-        password: 6639
-    jpa:
-        open-in-view: false
-        generate-ddl: true
-        show-sql: true
-        hibernate:
-            ddl-auto: update
+    servlet:
+        multipart:
+            maxFileSize: 10MB
+            maxRequestSize: 20MB
+            enabled: true
+
+server:
+    port: 8083

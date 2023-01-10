@@ -31,7 +31,7 @@ public class UserController {
     @PostMapping("/signIn")
     public Long signIn(@RequestBody UserSignInVo userSignInVo){
         Long result;
-        result = userService.signIn(userSignInVo.getEmail(), userSignInVo.getPassword());
+        result = userService.signIn(userSignInVo);
         return result;
     }
 

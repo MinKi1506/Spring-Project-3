@@ -2,89 +2,91 @@ package com.example.minki.store.service.impl;
 
 import com.example.minki.store.model.entity.StoreEntity;
 import com.example.minki.store.model.vo.AddStoreVo;
-import com.example.minki.store.repository.StoreRepository;
 import com.example.minki.store.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
 @Slf4j
 public class StoreServiceImpl implements StoreService {
 
-    private final StoreRepository storeRepository;
-
-    //게시글 작성
+    @Autowired
+    WebClient webClient;
+    //포스팅 작성
     @Override
     @Transactional
-    public String addStore(@RequestBody AddStoreVo addStoreVo) {
-        String result;
-        StoreEntity storeEntity = storeRepository.save(new StoreEntity(addStoreVo));
-        if(null != storeEntity.getId() && !"".equals(storeEntity.getId())){
-            result = "success";
-        }else {
-            result = "fail";
-        }return result;
+//    public String addStore(@RequestBody AddStoreVo addStoreVo) {
+    public String addStore(AddStoreVo addStoreVo) {
+        String response;
+        response = webClient.post()
+                .uri("/addStore")
+                .bodyValue(addStoreVo)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+        return response;
     }
 
-    //게시글 수정
+    //포스팅 수정
     @Transactional
     @Override
-    public Optional<StoreEntity> updateStore(Long id, AddStoreVo addStoreVo) {
-        Optional<StoreEntity> storeEntity = this.storeRepository.findById(id);
-        storeEntity.ifPresent(t -> {
-            if(addStoreVo.getStoreName() != null && !"".equals(addStoreVo.getStoreName())){
-                t.setStoreName(addStoreVo.getStoreName());
-            }
-            if(addStoreVo.getMenu() != null && !"".equals(addStoreVo.getMenu())){
-                t.setMenu(addStoreVo.getMenu());
-            }
-            if(addStoreVo.getTitle() != null && !"".equals(addStoreVo.getTitle())){
-                t.setTitle(addStoreVo.getTitle());
-            }
-            if(addStoreVo.getContent() != null && !"".equals(addStoreVo.getContent())){
-                t.setContent(addStoreVo.getContent());
-            }
-            if(addStoreVo.getAddress() != null && !"".equals(addStoreVo.getAddress())){
-                t.setAddress(addStoreVo.getAddress());
-            }
-            if(addStoreVo.getTravelTime() != 0){
-                t.setTravelTime(addStoreVo.getTravelTime());
-            }
-            if(addStoreVo.getEditDate() != null && !"".equals(addStoreVo.getEditDate())){
-                t.setEditDate(addStoreVo.getEditDate());
-            }
-            this.storeRepository.save(t);
-        });
-
-        return storeEntity;
+    public String updateStore(Long id, AddStoreVo addStoreVo) {
+        String response;
+        response = webClient.put()
+                .uri("/updateStore/"+id)
+                .bodyValue(addStoreVo)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+        return response;
     }
 
-    //게시글 삭제
+    //포스팅 삭제
     @Override
+    @Transactional
     public String deleteStore(Long id) {
-        Optional<StoreEntity> storeEntity = this.storeRepository.findById(id);
-        storeEntity.ifPresent(t -> {
-           storeRepository.deleteById(id);
-        });
+        webClient.delete()
+                .uri("/deleteStore/"+id)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
         return "delete success";
     }
 
-//    //게시글 수정
-//    @Transactional
-//    public String updateStore(Long id, final AddStoreVo addStoreVo){
-//        Optional<StoreEntity> storeEntity = storeRepository.findById(id);
-//        storeEntity.ifPresent(selectUser);
-//
-//        if(storeEntity.isPresent()){
-//            return "fail";
-//        }
-//        StoreEntity newStoreEntity = newStoreEntity(addStoreVo);
-//        return "success";
-//    }
+    //게시글 조회
+    @Override
+    public StoreEntity getStore(Long id) {
+        StoreEntity storeEntity;
+        storeEntity = webClient.get()
+                .uri("/getStore/"+id)
+                .retrieve()
+                .bodyToMono(StoreEntity.class)
+                .block();
+        return storeEntity;
+    }
+
+    //게시글 리스트 조회
+    @Override
+    public List<StoreEntity> getStoreList() {
+        List<StoreEntity> storeEntityList;
+        storeEntityList = webClient.get()
+                .uri("/getStoreList")
+                .retrieve()
+                .bodyToFlux(StoreEntity.class)
+                .toStream()
+                .collect(Collectors.toList());
+        return storeEntityList;
+    }
+
+
+
+
 }

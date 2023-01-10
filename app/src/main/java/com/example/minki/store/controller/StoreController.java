@@ -10,6 +10,8 @@ import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,17 +32,32 @@ public class StoreController {
     //게시글 수정
     @PutMapping("/updateStore/{id}")
     public String updateStore(@PathVariable Long id, @RequestBody AddStoreVo addStoreVo){
-        Optional<StoreEntity> storeEntity = this.storeService.updateStore(id, addStoreVo);
+        storeService.updateStore(id, addStoreVo);
         return "updated";
     }
 
-    //게시글 목록 불러오기
-
- 
     //게시글 삭제
     @DeleteMapping("/deleteStore/{id}")
     public String deleteStore(@PathVariable Long id){
-        String result = storeService.deleteStore(id);
-        return result;
+        storeService.deleteStore(id);
+        return "deleted";
     }
+
+
+    //게시글 하나 불러오기
+    @GetMapping("/getStore/{id}")
+    public StoreEntity getStore(@PathVariable Long id){
+        StoreEntity storeEntity = storeService.getStore(id);
+        return storeEntity;
+    }
+
+    //게시글 목록 불러오기
+    @GetMapping("/getStoreList")
+    public List<StoreEntity> getStoreList(){
+        List<StoreEntity> storeList;
+        storeList = storeService.getStoreList();
+        return storeList;
+    }
+
+
 }

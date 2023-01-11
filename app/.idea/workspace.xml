@@ -5,127 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e61c7c45-8324-40ee-aa76-f3b4c91e5765" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../api/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/model/entity/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/model/vo/CommentRequestVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/repository/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/exception/DuplicateEmailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/exception/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/exception/FileException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/exception/GlobalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/model/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/model/vo/UserSignInVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/model/vo/UserSignUpVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/PhotoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/impl/PhotoServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/controller/StoreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/entity/StoreEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/vo/AddStoreVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/vo/ReadStoreVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/service/StoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/service/impl/StoreServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_lmax_disruptor_3_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_dns_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_classes_macos_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_dns_native_macos_osx_x86_64_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_classes_epoll_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_86_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_core_1_0_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_http_1_0_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectreactor_reactor_core_1_0_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectreactor_reactor_spring_1_0_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/BaseTimeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/config/WebClientConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/exception/FileException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/model/entity/Attachments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/model/entity/FileEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/model/vo/FileVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/repository/AttachmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/service/PhotoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/service/impl/PhotoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_14_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_4_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mariadb_jdbc_mariadb_java_client_3_0_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_7_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_7_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_7_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_7_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_3_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/like/controller/LikeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/like/model/entity/LikeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/like/model/vo/LikeRequestVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/like/repository/LikeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/like/service/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/like/service/impl/LikeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/comment/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/model/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/model/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/entity/StoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/entity/StoreEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/comment/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/comment/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/login/model/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/login/model/entity/UserEntity$UserEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/login/model/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/login/model/entity/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity$StoreEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity$StoreEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minki.iml" beforeDir="false" afterPath="$PROJECT_DIR$/minki.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/login/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/login/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/login/model/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/login/model/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/login/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/login/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/login/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/login/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/login/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/login/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/store/controller/StoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/model/entity/StoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/store/model/entity/StoreEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/model/vo/AddStoreVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/store/model/vo/AddStoreVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/model/vo/ReadStoreVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/store/model/vo/ReadStoreVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/repository/StoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/repository/StoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/store/service/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/store/service/impl/StoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/store/service/impl/StoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/login/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/login/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/login/model/entity/UserEntity$UserEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/login/model/entity/UserEntity$UserEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/login/model/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/login/model/entity/UserEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/login/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/login/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/login/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/login/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/login/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/controller/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/controller/StoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/entity/StoreEntity$StoreEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/entity/StoreEntity$StoreEntityBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/entity/StoreEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/entity/StoreEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/vo/AddStoreVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/vo/AddStoreVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/vo/ReadStoreVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/model/vo/ReadStoreVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/repository/StoreRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/service/StoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/store/service/impl/StoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/store/service/impl/StoreServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/comment/model/vo/CommentRequestVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/comment/model/vo/CommentRequestVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/comment/model/vo/CommentRequestVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/comment/model/vo/CommentRequestVo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

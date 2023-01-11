@@ -28,6 +28,8 @@ public class StoreEntity{
     private String menu;
     private int travelTime;
     private Long fileId;
+
+    private int liked;
 //
 //    @OneToMany(mappedBy = "store", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 //    private List<Attachments> attachments = new ArrayList<>();

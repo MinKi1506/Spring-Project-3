@@ -40,14 +40,13 @@ public class CommentServiceImpl implements CommentService {
         return comment;
     }
 
-    //댓글 리스트
+    //댓글 리스트 조회
     @Override
     @Transactional
     public List<Comment> getCommentList(@PathVariable Long storeId) {
         StoreEntity storeEntity = storeRepository.findById(storeId).get();
         return commentRepository.findAllByPost(storeEntity);
     }
-
 
     // 댓글 삭제
     @Transactional
@@ -68,6 +67,6 @@ public class CommentServiceImpl implements CommentService {
             this.commentRepository.save(origin);
         });
 
-        return this.commentRepository.findAllByPost(storeEntity);
+        return this.commentRepository.findAllByPost(storeEntity); // 수정된 댓글을 반영한 댓글 새로고침
     }
 }

@@ -16,7 +16,11 @@ public interface StoreService {
     //포스팅 삭제
     String deleteStore(Long id);
 
+    //포스팅 1개 조회
     Optional<StoreEntity> getStore(Long id);
 
+    //포스팅 리스트 조회
     List<StoreEntity> getStoreList();
+
+
 }

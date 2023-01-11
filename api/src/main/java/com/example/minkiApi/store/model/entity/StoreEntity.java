@@ -4,6 +4,8 @@ package com.example.minkiApi.store.model.entity;
 import com.example.minkiApi.store.model.vo.AddStoreVo;
 import com.example.minkiApi.store.model.vo.ReadStoreVo;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -28,8 +30,8 @@ public class StoreEntity{
     private String menu;
     private int travelTime;
     private Long fileId;
+    private Long likeCount = 0L;
 
-    private int liked;
 //
 //    @OneToMany(mappedBy = "store", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 //    private List<Attachments> attachments = new ArrayList<>();
@@ -44,6 +46,7 @@ public class StoreEntity{
         this.menu = menu;
         this.travelTime = travelTime;
         this.fileId = fileId;
+        this.likeCount = 0L;
     }
 
     //맛집 포스팅 정보 수정 메소드

@@ -6,7 +6,8 @@ public interface LikeService {
 //    String likeBoard(Long storeId);
 
 
-    int findLike(Long storeId, Long userId);
+    int countLike(Long storeId, Long userId);
 
     int saveLike(Long storeId, Long userId);
+
 }

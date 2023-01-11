@@ -28,7 +28,7 @@ public class LikeServiceImpl implements LikeService {
     private final LikeRepository likeRepository;
 
     @Override
-    public int findLike(Long storeId, Long userId) {
+    public int countLike(Long storeId, Long userId) {
 
         //저장된 Data가 있다면 1, 없다면 0
         Optional<LikeEntity> findLike = likeRepository.findByStoreEntity_IdAndUserEntity_Id(storeId, userId);
@@ -47,6 +47,7 @@ public class LikeServiceImpl implements LikeService {
         System.out.println("좋아요가 있는지"+findLike.isPresent());
 
         if(findLike.isPresent()){
+            likeCountMinus(storeId);
             likeRepository.deleteByStoreEntity_IdAndUserEntity_Id(storeId,userId);
 //            storeRepository.minusLike(storeId); 좋아요 하나 감소
             return 0;
@@ -55,11 +56,34 @@ public class LikeServiceImpl implements LikeService {
             StoreEntity storeEntity = storeRepository.findById(storeId).get();
 
             LikeEntity likeEntity = LikeEntity.toLikeEntity(storeEntity, userEntity);
+            likeCountPlus(storeId);
             likeRepository.save(likeEntity);
 //            storeRepository.plusLike(storeId); 좋아요 하나 증가
             return 1;
         }
     }
+
+    //포스팅 좋아요수 증가
+    public void likeCountPlus(Long storeId) {
+        Long response = storeRepository.findById(storeId).get().getLikeCount();
+        response++;
+        StoreEntity storeEntity;
+        storeEntity = storeRepository.findById(storeId).get();
+        storeEntity.setLikeCount(response);
+        storeRepository.save(storeEntity);
+
+    }
+
+    //포스팅 좋아요수 감소
+    public void likeCountMinus(Long storeId) {
+        Long response = storeRepository.findById(storeId).get().getLikeCount();
+        response--;
+        StoreEntity storeEntity;
+        storeEntity = storeRepository.findById(storeId).get();
+        storeEntity.setLikeCount(response);
+        storeRepository.save(storeEntity);
+    }
+
 
     //@Override
 //public int findLike(Long storeId, Long userId) {

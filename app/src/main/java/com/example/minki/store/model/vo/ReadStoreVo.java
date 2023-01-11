@@ -17,6 +17,8 @@ public class ReadStoreVo {
     private String content;
     private int travelTime;
 
+    private Long likeCount;
+
     //Entity를 Vo화 시키는 생성자
     public ReadStoreVo(StoreEntity storeEntity){
         this.title = storeEntity.getTitle();

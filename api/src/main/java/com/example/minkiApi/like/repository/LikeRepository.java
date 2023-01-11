@@ -13,6 +13,8 @@ public interface LikeRepository extends JpaRepository<LikeEntity, Long> {
 
     void deleteByStoreEntity_IdAndUserEntity_Id(Long storeId, Long userId);
 
+    Long countByStoreEntity_Id(Long storeId);
+
 //    Optional<LikeEntity> findByStoreEntityIdAndUserEntityId(Long storeId, Long userId);
 //
 //    void deleteByStoreEntityIdAndUserEntityId(Long storeId, Long userId);

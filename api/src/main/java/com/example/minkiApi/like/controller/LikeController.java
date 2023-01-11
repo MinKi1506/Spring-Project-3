@@ -17,7 +17,7 @@ public class LikeController {
     @Autowired
     LikeService likeService;
 
-    //좋아요
+    //좋아요&좋아요 취소
     @PostMapping("/like")
     public int onLike(@RequestBody LikeRequestVo likeRequestVo) {
         Long storeId = likeRequestVo.getStoreId();
@@ -25,6 +25,8 @@ public class LikeController {
         int result = likeService.saveLike(storeId,userId);
         return result;
     }
+
+//    @GetMapping
 
 
 }

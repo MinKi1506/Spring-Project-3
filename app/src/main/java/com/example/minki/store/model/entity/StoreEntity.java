@@ -21,9 +21,7 @@ public class StoreEntity{
     private String menu;
     private int travelTime;
     private Long fileId;
-//
-//    @OneToMany(mappedBy = "store", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-//    private List<Attachments> attachments = new ArrayList<>();
+    private Long likeCount;
 
     @Builder // builder = 클래스 자동생성 -> 생성자 대신 사용
     public StoreEntity(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime, Long fileId){
@@ -35,6 +33,7 @@ public class StoreEntity{
         this.menu = menu;
         this.travelTime = travelTime;
         this.fileId = fileId;
+        this.likeCount = 0L;
     }
 
     //맛집 포스팅 정보 수정 메소드

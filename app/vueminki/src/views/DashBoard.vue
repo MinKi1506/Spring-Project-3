@@ -32,7 +32,17 @@
 
 <script>
 export default {
+  created() {
+    this.getUserId();
+  },
+
   components: {},
+  methods: {
+    //현재 이용자의 userId 조회
+    getUserId() {
+      console.log("현재 사용자의 userId: " + this.$store.state.userId);
+    },
+  },
 };
 </script>
 

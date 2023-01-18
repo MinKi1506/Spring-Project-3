@@ -26,13 +26,13 @@ public class UserServiceImpl implements UserService {
     //회원가입
     @Override
     @Transactional
-    public String signUp(@RequestBody UserSignUpVo userSignUpVo) throws RuntimeException {
-        String response;
+    public Long signUp(@RequestBody UserSignUpVo userSignUpVo) throws RuntimeException {
+        Long response;
         response = webClient.post()
                 .uri("/signUp")
                 .bodyValue(userSignUpVo)
                 .retrieve()
-                .bodyToMono(String.class)
+                .bodyToMono(Long.class)
                 .block();
         return response;
     }

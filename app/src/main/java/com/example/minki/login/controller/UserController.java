@@ -23,16 +23,18 @@ public class UserController {
 
     //회원가입
     @PostMapping("/signUp")
-    public void signUp(@RequestBody UserSignUpVo userSignUpVo) throws Exception{
-        userService.signUp(userSignUpVo);
+    public Long signUp(@RequestBody UserSignUpVo userSignUpVo) throws Exception{
+        Long response;
+        response = userService.signUp(userSignUpVo);
+        return response;
     }
 
     //로그인
     @PostMapping("/signIn")
     public Long signIn(@RequestBody UserSignInVo userSignInVo){
-        Long result;
-        result = userService.signIn(userSignInVo);
-        return result;
+        Long response;
+        response = userService.signIn(userSignInVo);
+        return response;
     }
 
 }

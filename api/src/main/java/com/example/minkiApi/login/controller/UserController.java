@@ -21,8 +21,8 @@ public class UserController {
 
     //회원가입
     @PostMapping("/signUp")
-    public String signUp(@RequestBody UserSignUpVo userSignUpVo) throws Exception{
-        String response;
+    public Long signUp(@RequestBody UserSignUpVo userSignUpVo) throws Exception{
+        Long response;
         response = userService.signUp(userSignUpVo);
         return response;
     }

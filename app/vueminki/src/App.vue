@@ -1,14 +1,6 @@
 <template>
-  <!-- <v-app>
-    <v-main>
-      <HelloWorld />
-      <v-container>
-        <router-view></router-view>
-      </v-container>
-    </v-main>
-  </v-app> -->
   <v-app>
-    <div>
+    <!-- <div>
       <v-navigation-drawer app dark :src="require('./assets/food.jpg')">
         <template v-slot:img="props">
           <v-img :gradient="gradient" v-bind="props" />
@@ -55,9 +47,9 @@
           </div>
         </div>
       </v-navigation-drawer>
-    </div>
+    </div> -->
 
-    <v-main>
+    <v-main class="fontJua smallFont">
       <router-view />
     </v-main>
   </v-app>
@@ -88,3 +80,29 @@ export default {
   }),
 };
 </script>
+<style>
+@font-face {
+  font-family: "jua";
+  src: url("../public/BmJua.ttf");
+}
+
+.fontJua {
+  font-family: "jua";
+}
+
+.smallFont {
+  font-size: 30px;
+}
+
+.middleFont {
+  font-size: 40px;
+}
+
+.bigFont {
+  font-size: 50px;
+}
+
+.bigBigFont {
+  font-size: 60px;
+}
+</style>

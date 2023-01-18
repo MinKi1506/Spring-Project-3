@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <v-row class="py-4">
       <v-col> 다이어트 게시판 </v-col>
     </v-row>

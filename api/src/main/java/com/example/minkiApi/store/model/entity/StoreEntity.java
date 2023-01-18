@@ -3,12 +3,12 @@ package com.example.minkiApi.store.model.entity;
 
 import com.example.minkiApi.store.model.vo.AddStoreVo;
 import com.example.minkiApi.store.model.vo.ReadStoreVo;
-import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
-import org.springframework.boot.context.properties.bind.DefaultValue;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,20 +24,21 @@ public class StoreEntity{
     private Long id;
     private String title;
     private LocalDateTime createdDateTime;
+
     private String content;
     private String storeName;
     private String address;
     private String menu;
     private int travelTime;
-    private Long fileId;
     private Long likeCount = 0L;
+    private Long writerId;
 
 //
 //    @OneToMany(mappedBy = "store", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
 //    private List<Attachments> attachments = new ArrayList<>();
 
     @Builder // builder = 클래스 자동생성 -> 생성자 대신 사용
-    public StoreEntity(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime, Long fileId){
+    public StoreEntity(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime, Long writerId){
         this.title = title;
         this.createdDateTime = createdDateTime;
         this.content = content;
@@ -45,12 +46,12 @@ public class StoreEntity{
         this.address = address;
         this.menu = menu;
         this.travelTime = travelTime;
-        this.fileId = fileId;
         this.likeCount = 0L;
+        this.writerId = writerId;
     }
 
     //맛집 포스팅 정보 수정 메소드
-    public void update(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime, Long fileId){
+    public void update(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime,Long writerId){
         this.title = title;
         this.createdDateTime = createdDateTime;
         this.content = content;
@@ -58,7 +59,7 @@ public class StoreEntity{
         this.address = address;
         this.menu = menu;
         this.travelTime = travelTime;
-        this.fileId = fileId;
+        this.writerId = writerId;
     }
 
     //request VO를 Entity화 시키는 생성자
@@ -70,7 +71,7 @@ public class StoreEntity{
         this.address = addStoreVo.getAddress();
         this.menu = addStoreVo.getMenu();
         this.travelTime = addStoreVo.getTravelTime();
-        this.fileId = addStoreVo.getFileId();
+        this.writerId = addStoreVo.getWriterId();
     }
 
     //response VO를 Entity화 시키는 생성자
@@ -79,6 +80,8 @@ public class StoreEntity{
         this.createdDateTime = readStoreVo.getCreatedDateTime();
         this.content = readStoreVo.getContent();
         this.travelTime = readStoreVo.getTravelTime();
+        this.writerId = readStoreVo.getWriterId();
+
     }
 
 }

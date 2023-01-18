@@ -9,7 +9,7 @@
       <v-col><v-btn>뒤로가기 버튼</v-btn></v-col>
       <v-col><h3>다이어트 포스팅 타이틀</h3></v-col>
       <v-col><v-btn link: to="/dietEdit">수정하기</v-btn></v-col>
-      <v-col><v-btn>삭제하기</v-btn></v-col>
+      <v-col><v-btn link: to="/dietEditt">삭제하기</v-btn></v-col>
     </v-row>
 
     <v-row>

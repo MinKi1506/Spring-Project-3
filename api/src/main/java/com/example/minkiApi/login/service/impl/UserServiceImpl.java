@@ -46,12 +46,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public Long signIn(UserSignInVo userSignInVo) {
         Long result;
-        Optional<UserEntity> userEntity = userRepository.findByEmail(userSignInVo.getEmail());
-        if(userEntity.get().getPassword().equals(userSignInVo.getPassword())){
+        try {
+            Optional<UserEntity> userEntity = userRepository.findByEmail(userSignInVo.getEmail());
+            if(userEntity.get().getPassword().equals(userSignInVo.getPassword())){
             result = userEntity.get().getId();
         }else {
             result = 0L;
         }
-        return result;
+            return result;
+        }catch (Exception e){
+            System.out.println(e);
+            return 0L;
+        }
     }
 }

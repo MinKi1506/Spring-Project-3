@@ -10,6 +10,9 @@ public interface StoreService {
     //포스팅 추가
     String addStore(AddStoreVo addStoreVo);
 
+//    //포스팅 추가
+//    StoreEntity addStore(AddStoreVo addStoreVo, MultipartHttpServletRequest multipartHttpServletRequest);
+
     //포스팅 수정
     Optional<StoreEntity> updateStore(Long id, AddStoreVo addStoreVo);
 
@@ -23,4 +26,5 @@ public interface StoreService {
     List<StoreEntity> getStoreList();
 
 
+    Long getMaxStoreId();
 }

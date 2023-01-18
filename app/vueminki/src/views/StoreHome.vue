@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SideNav/>
     <v-row class="py-4">
       <v-col> 맛집 게시판 </v-col>
     </v-row>
@@ -24,7 +25,7 @@
 
     <v-row>
       <v-col class="d-flex justify-end mb-4">
-        <v-btn type="submit" class="mr-16" link: to="/storeAdd"
+        <v-btn type="submit" class="mr-16" @click="getMaxStoreId"
           >포스팅 하기</v-btn
         >
         <v-btn type="submit" class="mr-16" link: to="/storeDetail"
@@ -146,8 +147,26 @@
 </template>
 
 <script>
+import axios from 'axios';
+import router from '@/router';
+import SideNav from "../components/SideNav.vue";
+
 export default {
-  components: {},
+  components: {
+    SideNav
+  },
+  methods: {
+      async getMaxStoreId() {
+    try {
+      const response = await axios.get("http://localhost:8085/getMaxStoreId");
+      console.log("최대값은"+response.data);
+      router.push("/storeAdd");
+    }
+    catch(error){
+      console.log("에러"+error);
+    }
+  } 
+  }
 };
 </script>
 

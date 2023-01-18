@@ -2,15 +2,19 @@ package com.example.minkiApi.store.model.vo;
 
 import com.example.minkiApi.store.model.entity.StoreEntity;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class AddStoreVo {
+
+    private Long id;
     private String title;
     private LocalDateTime createdDateTime;
     private String content;
@@ -18,11 +22,12 @@ public class AddStoreVo {
     private String address;
     private String menu;
     private int travelTime;
-    private Long fileId;
+    private Long writerId;
 
 
     //Entity를 Vo화 시키는 생성
     public AddStoreVo(StoreEntity storeEntity){
+        this.id = storeEntity.getId();
         this.title = storeEntity.getTitle();
         this.createdDateTime = storeEntity.getCreatedDateTime();
         this.content = storeEntity.getContent();
@@ -30,6 +35,6 @@ public class AddStoreVo {
         this.address = storeEntity.getAddress();
         this.menu = storeEntity.getMenu();
         this.travelTime = storeEntity.getTravelTime();
-        this.fileId = storeEntity.getFileId();
+        this.writerId = storeEntity.getWriterId();
     }
 }

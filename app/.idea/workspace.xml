@@ -5,59 +5,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e61c7c45-8324-40ee-aa76-f3b4c91e5765" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/controller/StoreFileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/model/entity/StoreFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/repository/StoreFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/StoreFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/impl/StoreFileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/PhotoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/impl/PhotoServiceImpl.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/controller/StoreFileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/controller/StoreFileControllerCopy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/model/Vo/MultipartVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/model/entity/StoreFileEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/repository/StoreFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/service/FileHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/service/StoreFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/storeFile/service/impl/StoreFileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/login/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/controller/StoreFileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/model/entity/StoreFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/repository/StoreFileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/StoreFileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/photoFile/service/impl/StoreFileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/controller/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/controller/StoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/entity/StoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/entity/StoreEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/vo/AddStoreVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/vo/AddStoreVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/vo/ReadStoreVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/model/vo/ReadStoreVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/repository/StoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/repository/StoreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/service/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/service/impl/StoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api/src/main/java/com/example/minkiApi/store/service/impl/StoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/comment/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/comment/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/photoFile/controller/StoreFileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/photoFile/model/entity/StoreFile$StoreFileBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/photoFile/model/entity/StoreFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/photoFile/repository/StoreFileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/photoFile/service/StoreFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/photoFile/service/impl/StoreFileServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/controller/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/controller/StoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity$StoreEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity$StoreEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/entity/StoreEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/vo/AddStoreVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/vo/AddStoreVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/vo/ReadStoreVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/model/vo/ReadStoreVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/repository/StoreRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/repository/StoreRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/service/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/service/StoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/service/impl/StoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../api/target/classes/com/example/minkiApi/store/service/impl/StoreServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/.postcssrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/check-versions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/vue-loader.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/webpack.base.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/webpack.dev.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/build/webpack.prod.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/config/dev.env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/config/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/config/prod.env.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/src/router/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontvue/static/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/model/entity/FileEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/minki/photoFile/model/entity/FileEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/chunk-vendors.897d601d.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/css/app.30790115300ab27614ce176899523b62.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/css/app.30790115300ab27614ce176899523b62.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/app.b22ce679862c47a75225.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/app.b22ce679862c47a75225.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/manifest.2ae2e69a05c33dfc65f8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/vendor.43019ad10f30041714f6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/vendor.43019ad10f30041714f6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.12ddb8d2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/app.12ddb8d2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/chunk-vendors.1054df2f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/chunk-vendors.1054df2f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/minki/photoFile/model/entity/FileEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/minki/photoFile/model/entity/FileEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/chunk-vendors.897d601d.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/css/app.30790115300ab27614ce176899523b62.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/css/app.30790115300ab27614ce176899523b62.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/app.b22ce679862c47a75225.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/app.b22ce679862c47a75225.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/manifest.2ae2e69a05c33dfc65f8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/manifest.2ae2e69a05c33dfc65f8.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/vendor.43019ad10f30041714f6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/static/js/vendor.43019ad10f30041714f6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.12ddb8d2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.12ddb8d2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/chunk-vendors.1054df2f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/chunk-vendors.1054df2f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/views/DietDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/views/DietDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/views/DietEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/views/DietEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/views/DietHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/views/DietHome.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/views/SignIn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/views/SignIn.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/src/views/StoreHome.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/src/views/StoreHome.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueminki/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueminki/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +173,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/minki/login/controller/UserController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />

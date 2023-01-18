@@ -10,6 +10,8 @@
 #        show-sql: true
 #        hibernate:
 #            ddl-auto: update
+
+#파일 업로드 관련 스프링 설정 정보
 spring:
     servlet:
         multipart:

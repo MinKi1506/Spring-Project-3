@@ -11,6 +11,7 @@ import DietHome from "../views/DietHome";
 import DietAdd from "../views/DietAdd";
 import DietEdit from "../views/DietEdit";
 import DietDetail from "../views/DietDetail";
+import DietEditt from "../views/DietEditt";
 
 Vue.use(VueRouter);
 
@@ -69,6 +70,11 @@ const routes = [
     path: "/dietDetail",
     name: "dietDetail",
     component: DietDetail,
+  },
+  {
+    path: "/dietEditt",
+    name: "dietEditt",
+    component: DietEditt,
   },
 ];
 

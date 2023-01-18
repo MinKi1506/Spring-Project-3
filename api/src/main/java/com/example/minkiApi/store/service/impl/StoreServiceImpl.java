@@ -5,8 +5,10 @@ import com.example.minkiApi.store.model.entity.StoreEntity;
 import com.example.minkiApi.store.model.vo.AddStoreVo;
 import com.example.minkiApi.store.repository.StoreRepository;
 import com.example.minkiApi.store.service.StoreService;
+import com.example.minkiApi.storeFile.repository.StoreFileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +20,11 @@ import java.util.Optional;
 @Slf4j
 public class StoreServiceImpl implements StoreService {
 
+    @Autowired
     private final StoreRepository storeRepository;
+
+    @Autowired
+    private final StoreFileRepository storeFileRepository;
 
     //게시글 작성
     @Override
@@ -31,8 +37,10 @@ public class StoreServiceImpl implements StoreService {
             result = "success";
         }else {
             result = "fail";
-        }return result;
+        }
+        return result;
     }
+
 
     //게시글 수정
     @Transactional
@@ -92,6 +100,11 @@ public class StoreServiceImpl implements StoreService {
         return storeList;
     }
 
+    @Override
+    public Long getMaxStoreId() {
+        Long maxStoreId = this.storeRepository.getMaxStoreId();
+        return maxStoreId;
+    }
 
 
 }

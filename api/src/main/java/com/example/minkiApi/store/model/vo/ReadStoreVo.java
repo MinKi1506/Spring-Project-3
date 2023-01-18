@@ -19,11 +19,14 @@ public class ReadStoreVo {
 
     private Long likeCount;
 
+    private Long writerId;
+
     //Entity를 Vo화 시키는 생성자
     public ReadStoreVo(StoreEntity storeEntity){
         this.title = storeEntity.getTitle();
         this.createdDateTime = storeEntity.getCreatedDateTime();
         this.content = storeEntity.getContent();
         this.travelTime = storeEntity.getTravelTime();
+        this.writerId = storeEntity.getWriterId();
     }
 }

@@ -1,86 +1,85 @@
 <template>
   <div>
-    <v-file-input
-      v-model="files"
-      multiple
-      show-size
-      label="File input"
-    ></v-file-input>
-    <v-btn @click="upload" color="primary">Upload</v-btn>
-    <p>File Name : {{ files.name }}</p>
+    <h3>
+      파일 업로드 결과: { { this.response === '' ? 'waiting' : this.response } }
+    </h3>
+    <div>
+      <v-btn @click="uploadFileInDto()">Multipart in DTO Upload</v-btn>
+      <v-btn @click="uploadFileListInDto()">Images List in DTO Upload</v-btn>
+      <v-btn @click="uploadFileMapInDto()">Images Map in DTO Upload</v-btn>
+      <v-btn @click="uploadFileMapListInDto()">
+        Images Map-List in DTO Upload
+      </v-btn>
+    </div>
 
-    <v-divider></v-divider>
-
-    <form
-      name="form"
-      method="post"
-      action="http://localhost:8080/board"
-      enctype="multipart/form-data"
+    <v-card
+      width="350"
+      height="350"
+      v-for="fileName in files"
+      :key="fileName"
+      class="image"
     >
-      <input name="user" value="Pyo" />
-      <input name="content" value="Content" />
-      <input type="file" name="files" multiple="multiple" />
-      <input type="submit" id="submit" value="전송" />
-    </form>
-
-    <v-divider></v-divider>
-
-    <form action="post" enctype="multipart/form-data">
-      <input type="file" id="File" name="files" multiple="multiple" />
-      <button @click="upload" id="Button">전송</button>
-    </form>
+      <v-img :src="`http://localhost:8085/image/${fileName}`" alt="이미지" />
+    </v-card>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-const FileElement = document.querySelector("#File");
 
 export default {
-  data: () => ({
-    files: [],
-  }),
+  data() {
+    return {
+      response: "",
+      files: [],
+    };
+  },
+
+  mounted() {
+    this.fetchFiles();
+  },
 
   methods: {
-    // upload() {
-    //   console.log("Hello, Upload");
-    //   console.log(this.files.name);
-    // },
-
-    async upload() {
-      try {
-        const formData = new FormData();
-        formData.append("user", "minki");
-        formData.append("content", "minki's content");
-        for (let i = 0; i < FileElement.files.length; i++) {
-          formData.append("files", FileElement.files[i]);
-        }
-        const url = "http://localhost:8083/uploadFile";
-        const response = await axios.post(url, formData);
-        console.log(response);
-      } catch (error) {
-        console.error(error);
-      }
+    async fetchFiles() {
+      const response = await axios.get("http://localhost:8085/files/3");
+      this.files = response.data;
     },
 
-    // async upload() {
-    //   var fd = new FormData();
-    //   fd.append("files", this.files);
+    responseCallback(response) {
+      this.response = response.data;
+    },
 
-    //   await axios
-    //     .post("http://localhost:1337/upload", fd, {
-    //       headers: {
-    //         "Content-Type": "multipart/form-data",
-    //       },
-    //     })
-    //     .then((response) => {
-    //       console.log("SUCCESS!!");
-    //       console.log(response.data);
-    //     })
-    //     .catch(function () {
-    //       console.log("FAILURE!!");
-    //     });
-    // },
+    errorCallback(error) {
+      this.response = error.message;
+    },
+
+    getImageSelectElement(multiple) {
+      let element = document.createElement("input");
+      element.id = "image";
+      element.type = "file";
+      element.accept = "image/*";
+      element.multiple = multiple;
+      return element;
+    },
+
+    uploadFileInDto() {
+      var context = this;
+      let element = this.getImageSelectElement(false);
+      element.click();
+      element.onchange = function () {
+        const formdata = new FormData();
+        formdata.append("storeFile", this.files[0]);
+        formdata.append("storeId", 1);
+        axios
+          .post("http://localhost:8085/dto", formdata, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          })
+          .then(context.responseCallback)
+          .catch(context.errorCallback);
+      };
+    },
   },
 };
 </script>

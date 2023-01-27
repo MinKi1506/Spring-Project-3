@@ -42,14 +42,16 @@ const routes = [
     component: StoreAdd,
   },
   {
-    path: "/storeEdit",
+    path: "/storeEdit/:storeId",
     name: "storeEdit",
     component: StoreEdit,
+    props: true,
   },
   {
-    path: "/storeDetail",
+    path: "/storeDetail/:storeId",
     name: "storeDetail",
     component: StoreDetail,
+    props: true,
   },
   {
     path: "/dietHome",

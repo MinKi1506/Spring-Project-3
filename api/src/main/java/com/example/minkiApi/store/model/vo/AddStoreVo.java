@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Builder
 public class AddStoreVo {
 
-    private Long id;
     private String title;
     private LocalDateTime createdDateTime;
     private String content;
@@ -27,7 +26,6 @@ public class AddStoreVo {
 
     //Entity를 Vo화 시키는 생성
     public AddStoreVo(StoreEntity storeEntity){
-        this.id = storeEntity.getId();
         this.title = storeEntity.getTitle();
         this.createdDateTime = storeEntity.getCreatedDateTime();
         this.content = storeEntity.getContent();

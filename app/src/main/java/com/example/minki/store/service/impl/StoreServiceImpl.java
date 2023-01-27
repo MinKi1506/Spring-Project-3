@@ -86,7 +86,17 @@ public class StoreServiceImpl implements StoreService {
         return storeEntityList;
     }
 
-
+    //최대 storeId 조회
+    @Override
+    public Long getMaxStoreId() {
+        Long response;
+        response = webClient.get()
+                .uri("/getMaxStoreId")
+                .retrieve()
+                .bodyToMono(Long.class)
+                .block();
+        return response;
+    }
 
 
 }

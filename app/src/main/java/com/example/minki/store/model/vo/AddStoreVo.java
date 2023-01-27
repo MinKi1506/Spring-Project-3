@@ -18,7 +18,7 @@ public class AddStoreVo {
     private String address;
     private String menu;
     private int travelTime;
-    private Long fileId;
+    private Long writerId;
 
 
     //Entity를 Vo화 시키는 생성
@@ -30,6 +30,7 @@ public class AddStoreVo {
         this.address = storeEntity.getAddress();
         this.menu = storeEntity.getMenu();
         this.travelTime = storeEntity.getTravelTime();
-        this.fileId = storeEntity.getFileId();
+        this.writerId = storeEntity.getWriterId();
+//        this.fileId = storeEntity.getFileId();
     }
 }

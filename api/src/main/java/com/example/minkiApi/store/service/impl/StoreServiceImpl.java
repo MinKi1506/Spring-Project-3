@@ -100,11 +100,11 @@ public class StoreServiceImpl implements StoreService {
         return storeList;
     }
 
+    //최대 storeId 조회
     @Override
     public Long getMaxStoreId() {
-        Long maxStoreId = this.storeRepository.getMaxStoreId();
-        return maxStoreId;
+        Long response = this.storeRepository.getMaxStoreId();
+        return response;
     }
-
 
 }

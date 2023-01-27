@@ -25,4 +25,6 @@ public interface CommentService {
     List<Comment> updateComment(CommentRequestVo commentRequestVo, Long commentId, Long storeId);
 
 
+//    //댓글 갯수 조회
+//    Long getCommentCount(Long storeId);
 }

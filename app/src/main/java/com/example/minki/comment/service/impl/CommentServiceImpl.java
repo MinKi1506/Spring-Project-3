@@ -84,6 +84,18 @@ public class CommentServiceImpl implements CommentService {
                 .collect(Collectors.toList());
         return commentList;
     }
+
+//    //댓글 갯수 조회
+//    @Override
+//    public Long getCommentCount(Long storeId) {
+//        Long response;
+//        response = webClient.get()
+//                .uri("/store/"+storeId+"/comment/count")
+//                .retrieve()
+//                .bodyToMono(Long.class)
+//                .block();
+//        return response;
+//    }
 //
 //    //댓글 수정
 //    @Transactional

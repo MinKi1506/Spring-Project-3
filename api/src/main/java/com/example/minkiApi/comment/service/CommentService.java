@@ -2,7 +2,6 @@ package com.example.minkiApi.comment.service;
 
 import com.example.minkiApi.comment.model.entity.Comment;
 import com.example.minkiApi.comment.model.vo.CommentRequestVo;
-import com.example.minkiApi.login.model.entity.UserEntity;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -25,5 +24,8 @@ public interface CommentService {
     @Transactional
     List<Comment> updateComment(CommentRequestVo commentRequestVo, Long commentId, Long storeId);
 
+//    //댓글 갯수 조회
+//    @Transactional
+//    Long getCommentCount(Long storeId);
 
 }

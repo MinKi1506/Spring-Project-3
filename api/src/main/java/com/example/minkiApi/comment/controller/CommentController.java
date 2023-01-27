@@ -3,13 +3,12 @@ package com.example.minkiApi.comment.controller;
 import com.example.minkiApi.comment.model.entity.Comment;
 import com.example.minkiApi.comment.model.vo.CommentRequestVo;
 import com.example.minkiApi.comment.service.CommentService;
-import com.example.minkiApi.login.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequiredArgsConstructor
 public class CommentController {
@@ -48,7 +47,14 @@ public class CommentController {
         commentList = commentService.updateComment(commentRequestVo, commentId, storeId);
         return  commentList;
     }
-
+//
+//    //댓글 갯수 조회
+//    @GetMapping("/store/{storeId}/comment/count")
+//    public Long commentCount(@PathVariable Long storeId){
+//        Long response;
+//        response = commentService.getCommentCount(storeId);
+//        return response;
+//    }
 
 
 

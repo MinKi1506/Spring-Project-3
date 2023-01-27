@@ -9,6 +9,8 @@ public interface StoreFileService {
 
     String addStoreFile(MultipartVo multipartVo);
 
+    int deleteStoreFile(String fileName);
+
     List<StoreFileEntity> getStoreFileListByStoreId(Long storeId);
 
 

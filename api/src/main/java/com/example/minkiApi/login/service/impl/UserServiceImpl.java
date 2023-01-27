@@ -59,4 +59,17 @@ public class UserServiceImpl implements UserService {
             return 0L;
         }
     }
+
+    //유저 닉네임 조회
+    @Override
+    public String getUserName(Long userId) {
+        String response;
+        try{
+            Optional<UserEntity> userEntity = userRepository.findById(userId);
+            response = userEntity.get().getName();
+        }catch (Exception c){
+            return "사용자명을 찾을 수 없습니다.";
+        }
+        return response;
+    }
 }

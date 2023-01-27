@@ -1,5 +1,6 @@
 <template>
   <div style="height: 100%">
+    <SideNav />
     <v-row class="py-4">
       <v-col> 다이어트 게시판 - 포스팅 작성 </v-col>
     </v-row>
@@ -88,7 +89,9 @@
 </template>
 
 <script>
-export default {};
+import SideNav from "@/components/SideNav.vue";
+
+export default { components: { SideNav } };
 </script>
 
 <style></style>

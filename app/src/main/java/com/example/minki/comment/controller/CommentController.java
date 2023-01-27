@@ -48,6 +48,14 @@ public class CommentController {
         return commentList;
     }
 
+//    //댓글 갯수 조회
+//    @GetMapping("/store/{storeId}/comment/count")
+//    public Long commentCount(@PathVariable Long storeId){
+//        Long response;
+//        response = commentService.getCommentCount(storeId);
+//        return response;
+//    }
+
 
 
 }

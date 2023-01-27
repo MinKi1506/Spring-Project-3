@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    <SideNav />
     <v-row class="py-4">
       <v-col> 다이어트 게시판 </v-col>
     </v-row>
@@ -43,8 +43,10 @@
 </template>
 
 <script>
+import SideNav from '@/components/SideNav.vue';
+
 export default {
-  components: {},
+  components: { SideNav },
 };
 </script>
 

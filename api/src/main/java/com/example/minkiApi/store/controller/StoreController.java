@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin
+//@CrossOrigin
 public class StoreController {
 
     @Autowired
@@ -92,10 +92,10 @@ public class StoreController {
     }
 
 
-    //MaxStoreId 가져오기
+    //최대 storeId 조회
     @GetMapping("/getMaxStoreId")
     public Long getMaxStoreId(){
-        Long maxStoreId = storeService.getMaxStoreId();
-        return maxStoreId;
+        Long response = storeService.getMaxStoreId();
+        return response;
     }
 }

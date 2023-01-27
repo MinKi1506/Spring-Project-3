@@ -1,10 +1,12 @@
 <template>
   <div>
     <h3>
-      파일 업로드 결과: { { this.response === '' ? 'waiting' : this.response } }
+      파일 업로드 결과: {{ this.response === "" ? "waiting" : this.response }}
     </h3>
     <div>
-      <v-btn @click="uploadFileInDto()">Multipart in DTO Upload</v-btn>
+      <v-btn @click="uploadFileInDto(thisStoreId)"
+        >Multipart in DTO Upload</v-btn
+      >
       <v-btn @click="uploadFileListInDto()">Images List in DTO Upload</v-btn>
       <v-btn @click="uploadFileMapInDto()">Images Map in DTO Upload</v-btn>
       <v-btn @click="uploadFileMapListInDto()">
@@ -40,8 +42,9 @@ export default {
   },
 
   methods: {
+    //해당 storeId를 가진 사진 data 가져와서 띄우기
     async fetchFiles() {
-      const response = await axios.get("http://localhost:8085/files/3");
+      const response = await axios.get("http://localhost:8085/files/21");
       this.files = response.data;
     },
 
@@ -62,14 +65,15 @@ export default {
       return element;
     },
 
-    uploadFileInDto() {
+    //해당 storeId에 사진 data 업로드
+    uploadFileInDto(storeId) {
       var context = this;
       let element = this.getImageSelectElement(false);
       element.click();
       element.onchange = function () {
         const formdata = new FormData();
         formdata.append("storeFile", this.files[0]);
-        formdata.append("storeId", 1);
+        formdata.append("storeId", storeId);
         axios
           .post("http://localhost:8085/dto", formdata, {
             headers: {

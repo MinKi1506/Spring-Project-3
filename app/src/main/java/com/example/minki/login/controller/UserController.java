@@ -37,4 +37,11 @@ public class UserController {
         return response;
     }
 
+    @GetMapping("/getUserName/{userId}")
+    public String getUserName(@PathVariable Long userId){
+        String response;
+        response = userService.getUserName(userId);
+        return response;
+    }
+
 }

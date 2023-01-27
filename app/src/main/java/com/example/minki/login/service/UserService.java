@@ -7,4 +7,6 @@ public interface UserService {
     Long signUp(UserSignUpVo userSignUpVo);
 
     Long signIn(UserSignInVo userSignInVo);
+
+    String getUserName(Long userId);
 }

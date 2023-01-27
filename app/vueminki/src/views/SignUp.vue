@@ -108,15 +108,16 @@ import axios from "axios";
 import router from "@/router";
 
 export default {
+
   data() {
     return {
       valid: true,
       passwordRules: [(v) => !!v || "패스워드는 필수 입력 사항입니다!"],
-      //이메일 형식검증
-      // emailRules: [
-      //   (v) => !!v || "이메일은 필수 입력 사항입니다.",
-      //   (v) => /.+@.+/.test(v) || "이메일 형식을 지켜서 입력해 주세요.",
-      // ],
+      // 이메일 형식검증
+      emailRules: [
+        (v) => !!v || "이메일은 필수 입력 사항입니다.",
+        (v) => /.+@.+/.test(v) || "이메일 형식을 지켜서 입력해 주세요.",
+      ],
       checkbox: false,
       email: "",
       password: "",
@@ -125,9 +126,13 @@ export default {
   },
 
   methods: {
+
     //회원가입 매서드
-    signUp() {
-      axios({
+    async signUp() {
+
+        var vm = this;
+
+      await axios({
         url: "http://localhost:8083/signUp",
         method: "POST",
         data: {
@@ -140,14 +145,9 @@ export default {
           if (response.data != 0) {
             // store Vuex에 userId 지정
             alert("회원가입이 완료되었습니다.");
+        vm.$store.commit("setUserId", response.data); //store.userId값 갱신
+        vm.saveSession();
             console.log("가입한 유저의 userId: " + response.data);
-        this.$store.commit("setUserId", response.data); //store.userId값 갱신
-            
-            this.
-            console.log(
-              "신규가입한 사용자의 userId가 " + response.data + "로 변경되었습니다."
-            );
-
             router.push("/dashBoard");
           } else if (response.data == 0) {
             alert(
@@ -158,9 +158,16 @@ export default {
         .catch(function (err) {
           console.log("axios 통신에러" + err);
         });
-      (this.emial = ""), (this.password = ""), (this.name = ""), this.reset();
+      (this.email = ""), (this.password = ""), (this.name = ""), this.reset();
     },
 
+
+      //로그인한 userId를 세션 스토리지에 저장
+      saveSession() {
+      sessionStorage.setItem("loginedId",String(this.$store.state.userId));
+    },
+
+  
     validate() {
       this.$refs.form.validate();
     },

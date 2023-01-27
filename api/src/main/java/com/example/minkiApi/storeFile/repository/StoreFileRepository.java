@@ -9,6 +9,8 @@ public interface StoreFileRepository extends JpaRepository<StoreFileEntity, Long
 
     StoreFileEntity save(StoreFileEntity storeFileEntity);
 
+    void deleteByStoreFile(String fileName);
+
     List<StoreFileEntity> findAllByStoreId(Long storeId);
 
 }

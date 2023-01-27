@@ -1,5 +1,6 @@
 package com.example.minki.store.model.vo;
 
+import com.example.minki.comment.model.entity.Comment;
 import com.example.minki.store.model.entity.StoreEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,8 +17,9 @@ public class ReadStoreVo {
     private LocalDateTime createdDateTime;
     private String content;
     private int travelTime;
-
     private Long likeCount;
+    private Long commentCount;
+
 
     //Entity를 Vo화 시키는 생성자
     public ReadStoreVo(StoreEntity storeEntity){
@@ -25,5 +27,7 @@ public class ReadStoreVo {
         this.createdDateTime = storeEntity.getCreatedDateTime();
         this.content = storeEntity.getContent();
         this.travelTime = storeEntity.getTravelTime();
+        this.likeCount = storeEntity.getLikeCount();
+        this.commentCount = storeEntity.getCommentCount();
     }
 }

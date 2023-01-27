@@ -20,4 +20,6 @@ public interface StoreService {
 
 //    포스팅 리스트 조회
     List<StoreEntity> getStoreList();
+
+    Long getMaxStoreId();
 }

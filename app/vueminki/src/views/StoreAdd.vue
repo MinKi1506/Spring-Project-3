@@ -1,60 +1,71 @@
 <template>
   <div style="height: 100%">
+    <SideNav />
     <v-row class="py-4">
-      <v-col> 맛집 게시판 - 포스팅 작성 </v-col>
+      <v-col>
+        맛집 게시판 - 포스팅 <span class="purple--text">작성</span>
+      </v-col>
     </v-row>
     <v-divider class="pt-8"></v-divider>
 
     <v-row class="d-flex justify-around">
       <v-col cols="10" class="ml-4">
         <v-card class="px-4 py-4" height="1000">
-          <h3>상호명</h3>
+          <h4>포스팅 제목</h4>
           <v-text-field
-            v-model="message2"
+            v-model="item.title"
             solo
             clearable
             class=""
-            height="50"
+            height="35"
+            placeholder="포스팅 제목을 입력해 주세요"
+          ></v-text-field>
+          <h4>상호명</h4>
+          <v-text-field
+            v-model="item.storeName"
+            solo
+            clearable
+            class=""
+            height="35"
             placeholder="맛집 상호명을 입력해 주세요"
           ></v-text-field>
           <h3>메뉴</h3>
           <v-text-field
-            v-model="message2"
+            v-model="item.menu"
             solo
             clearable
             class=""
-            height="50"
+            height="35"
             placeholder="드셨던 메뉴, 혹은 대표 메뉴를 입력해 주세요"
           ></v-text-field>
           <h3>상세주소</h3>
-
           <v-text-field
-            v-model="message2"
+            v-model="item.address"
             solo
             clearable
             class=""
-            height="50"
+            height="35"
             placeholder="맛집의 상세 주소를 입력해 주세요"
           ></v-text-field>
           <h3>이동 시간</h3>
-
           <v-text-field
-            v-model="message2"
+            v-model="item.travelTime"
             solo
             clearable
             class=""
-            height="50"
+            height="35"
             placeholder="회사로부터 걸어서 몇 분 걸리나요?"
           ></v-text-field>
+
           <v-row class="d-flex justify-around">
             <v-col cols="7" class="d-flex flex-column">
               <h3>본문</h3>
               <v-text-field
-                v-model="message2"
+                v-model="item.content"
                 solo
                 clearable
                 class=""
-                height="300"
+                height="250"
                 placeholder="본문 내용을 입력해 주세요"
               ></v-text-field>
             </v-col>
@@ -103,7 +114,7 @@
               </v-card-title>
 
               <v-card-actions>
-                <v-btn rounded color="gray lighten-3" @click="upload()">
+                <v-btn rounded color="gray lighten-3" @click="uploadStore()">
                   등록
                 </v-btn>
                 <v-btn
@@ -148,23 +159,66 @@
 </template>
 
 <script>
+import SideNav from "@/components/SideNav.vue";
 import router from "@/router";
+import axios from "axios";
 export default {
   data() {
     return {
       storeWriteCancelDialog: false,
       storeWriteConfirmDialog: false,
       files: [],
+
+      item: {
+        title: "",
+        createdDateTime: "",
+        content: "",
+        storeName: "",
+        address: "",
+        menu: "",
+        travelTime: "",
+        likeCount: 0,
+        commentCount: 0,
+        writerId: "",
+      },
+      thisStoreId: "",
     };
   },
+
+  created() {
+    this.getSession();
+  },
+
   methods: {
+    //현재 로그인된 사용자 userId조회 -> writerId로 설정
+    getSession() {
+      const loginedId = parseInt(sessionStorage.getItem("loginedId"));
+      console.log("현재 로그인된 사용자의 id session:" + loginedId);
+      this.item.writerId = loginedId;
+    },
+
+    //뒤로가기 매서드
     goBack() {
       router.go(-1);
     },
-    upload() {
-      console.log(":::::" + this.files.name);
+
+    //맛집 게시판 메인화면 이동 매서드
+    goStoreHome() {
+      router.push("/storeHome");
+    },
+
+    async uploadStore() {
+      try {
+        await axios.post("http://localhost:8083/addStore", this.item);
+      } catch (error) {
+        console.log("맛집 포스팅 등록 에러:" + error);
+      }
+      alert("성공적으로 맛집포스팅을 등록했습니다.");
+      console.log("파일name:::::" + this.files.name);
+      this.goStoreHome();
     },
   },
+  components: { SideNav },
 };
 </script>
 

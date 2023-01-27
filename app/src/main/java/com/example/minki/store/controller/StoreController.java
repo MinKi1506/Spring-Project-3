@@ -59,5 +59,12 @@ public class StoreController {
         return storeList;
     }
 
+    //최대 게시글Id 불러오기
+    @GetMapping("/getMaxStoreId")
+    public Long getMaxStoreId(){
+        Long response = storeService.getMaxStoreId();
+        return response;
+    }
+
 
 }

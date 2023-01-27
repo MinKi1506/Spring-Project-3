@@ -1,11 +1,11 @@
 package com.example.minkiApi.comment.model.entity;
 
 
-import com.example.minkiApi.login.model.entity.UserEntity;
 import com.example.minkiApi.store.model.entity.StoreEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

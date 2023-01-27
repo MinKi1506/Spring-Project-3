@@ -49,4 +49,16 @@ public class UserServiceImpl implements UserService {
                 .block();
         return response;
     }
+
+    //유저 이름 가져오기
+    @Override
+    public String getUserName(Long userId) {
+        String response;
+        response = webClient.get()
+                .uri("/getUserName/"+userId)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+        return response;
+    }
 }

@@ -4,8 +4,6 @@ import com.example.minkiApi.comment.model.entity.Comment;
 import com.example.minkiApi.comment.model.vo.CommentRequestVo;
 import com.example.minkiApi.comment.repository.CommentRepository;
 import com.example.minkiApi.comment.service.CommentService;
-import com.example.minkiApi.login.model.entity.UserEntity;
-import com.example.minkiApi.login.service.UserService;
 import com.example.minkiApi.store.model.entity.StoreEntity;
 import com.example.minkiApi.store.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +34,7 @@ public class CommentServiceImpl implements CommentService {
         comment.setContent(commentRequestVo.getContent());
         comment.setPost(commentRequestVo.getPost());
         commentRepository.save(comment);
+        commentCountPlus(storeId);
         return comment;
     }
 
@@ -54,6 +52,7 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> deleteComment(@PathVariable Long commentId, Long storeId) {
         StoreEntity storeEntity = storeRepository.findById(storeId).get();
         this.commentRepository.deleteById(commentId); //해당 댓글 삭제 후
+        commentCountMinus(storeId);
         return this.commentRepository.findAllByPost(storeEntity); // 삭제된 댓글을 제외한 댓글 새로고침
     }
 
@@ -69,4 +68,41 @@ public class CommentServiceImpl implements CommentService {
 
         return this.commentRepository.findAllByPost(storeEntity); // 수정된 댓글을 반영한 댓글 새로고침
     }
+
+//
+//    //댓글 갯수 조회
+//    @Override
+//    public Long getCommentCount(Long storeId) {
+//        Long response;
+//        StoreEntity storeEntity;
+//        storeEntity = storeRepository.findById(storeId).get();
+//        response = this.commentRepository.countByPost(storeEntity);
+//        return response;
+//    }
+
+    //맛집 포스팅 댓글 수 증가
+    @Transactional
+    public void commentCountPlus(Long storeId){
+        Long response = storeRepository.findById(storeId).get().getCommentCount();
+        response++;
+        StoreEntity storeEntity;
+        storeEntity = storeRepository.findById(storeId).get();
+        storeEntity.setCommentCount(response);
+        storeRepository.save(storeEntity);
+    }
+
+
+    //맛집 포스팅 댓글 수 감소
+    @Transactional
+    public void commentCountMinus(Long storeId){
+        Long response = storeRepository.findById(storeId).get().getCommentCount();
+        response--;
+        StoreEntity storeEntity;
+        storeEntity = storeRepository.findById(storeId).get();
+        storeEntity.setCommentCount(response);
+        storeRepository.save(storeEntity);
+    }
+
+
+
 }

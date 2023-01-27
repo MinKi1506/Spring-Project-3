@@ -7,9 +7,7 @@ import com.example.minkiApi.login.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -35,4 +33,11 @@ public class UserController {
         return response;
     }
 
+    //유저 이름 조회
+    @GetMapping("/getUserName/{userId}")
+    public String getUserName(@PathVariable Long userId){
+        String response;
+        response = userService.getUserName(userId);
+        return response;
+    }
 }

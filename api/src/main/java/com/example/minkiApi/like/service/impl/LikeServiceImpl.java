@@ -1,7 +1,6 @@
 package com.example.minkiApi.like.service.impl;
 
 import com.example.minkiApi.like.model.entity.LikeEntity;
-import com.example.minkiApi.like.model.vo.LikeRequestVo;
 import com.example.minkiApi.like.repository.LikeRepository;
 import com.example.minkiApi.like.service.LikeService;
 import com.example.minkiApi.login.model.entity.UserEntity;
@@ -9,7 +8,6 @@ import com.example.minkiApi.login.repository.UserRepository;
 import com.example.minkiApi.store.model.entity.StoreEntity;
 import com.example.minkiApi.store.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,6 +38,7 @@ public class LikeServiceImpl implements LikeService {
     }
 
 
+    //맛집 포스팅 좋아요
     @Override
     @Transactional
     public int saveLike(Long storeId, Long userId) {

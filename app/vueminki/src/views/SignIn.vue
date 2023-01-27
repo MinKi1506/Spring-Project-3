@@ -88,7 +88,7 @@ export default {
       //   (v) => !!v || "이메일은 필수 입력 사항입니다.",
       //   (v) => /.+@.+/.test(v) || "이메일 형식을 지켜서 입력해 주세요.",
       // ],
-      emial: "",
+      email: "",
       password: "",
     };
   },
@@ -122,7 +122,9 @@ export default {
             alert("로그인에 성공했습니다!");
             vm.$store.commit("setUserId", response.data);
             // this.$store.commit("setUserId", response.data);
+            vm.saveSession();
             console.log("로그인한 유저의 userId: " + response.data);
+
             router.push("/dashBoard");
           } else if (response.data == 0) {
             alert(
@@ -135,8 +137,14 @@ export default {
         });
 
 
-      (this.emial = ""), (this.password = ""),this.reset();
+      (this.email = ""), (this.password = ""),this.reset();
     },
+
+    //로그인한 userId를 세션 스토리지에 저장
+    saveSession() {
+      sessionStorage.setItem("loginedId",String(this.$store.state.userId));
+    },
+
 
     validate() {
       this.$refs.form.validate();

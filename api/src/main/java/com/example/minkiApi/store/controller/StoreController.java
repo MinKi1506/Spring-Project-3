@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,37 +28,6 @@ public class StoreController {
         return "added";
     }
 
-////        게시글 작성
-//    @PostMapping("/addStore")
-//    public ResponseEntity<?> addStore(
-//            @RequestParam("title") String title,
-////            @RequestParam("createdDateTime") LocalDateTime createdDateTime,
-//            @RequestParam("content") String content,
-//            @RequestParam("storeName") String storeName,
-//            @RequestParam("address") String address,
-//            @RequestParam("menu") String menu,
-//            @RequestParam("travelTime") int travelTime,
-//            @RequestParam("writerId") Long writerId,
-//            @RequestParam("files") List<MultipartFile> files
-//    ) throws Exception {
-//        StoreEntity storeEntity = storeService.addStore(AddStoreVo.builder()
-//                .title(title)
-//                .content(content)
-//                .storeName(storeName)
-//                .address(address)
-//                .menu(menu)
-//                .travelTime(travelTime)
-//                .writerId(writerId)
-////                .build(), files);
-//                .build(), files);
-//
-//        URI uriLocation = new URI("/addStore/"+ storeEntity.getId());
-//        return ResponseEntity.created(uriLocation).body("{}");
-//
-//    }
-
-
-
     //게시글 수정
     @PutMapping("/updateStore/{id}")
     public String updateStore(@PathVariable Long id, @RequestBody AddStoreVo addStoreVo){
@@ -70,7 +38,7 @@ public class StoreController {
     //게시글 목록 불러오기
     @GetMapping("/getStoreList")
     public List<StoreEntity> getStoreList(){
-        List<StoreEntity> storeList = new ArrayList<>();
+        List<StoreEntity> storeList;
         storeList = storeService.getStoreList();
         return storeList;
     }
@@ -97,5 +65,29 @@ public class StoreController {
     public Long getMaxStoreId(){
         Long response = storeService.getMaxStoreId();
         return response;
+    }
+
+    //제목으로 리스트 검색
+    @GetMapping("/searchStoreByTitle/{title}")
+    public List<StoreEntity> searchStoreByTitle(@PathVariable String title) {
+        List<StoreEntity> storeList;
+        storeList = storeService.searchStoreByTitle(title);
+        return storeList;
+    }
+
+    //가게명으로 리스트 검색
+    @GetMapping("/searchStoreByStoreName/{storeName}")
+    public List<StoreEntity> searchStoreByStoreName(@PathVariable String storeName) {
+        List<StoreEntity> storeList;
+        storeList = storeService.searchStoreByStoreName(storeName);
+        return storeList;
+    }
+
+    //본문 내용으로 리스트 검색
+    @GetMapping("/searchStoreByContent/{content}")
+    public List<StoreEntity> searchStoreByContent(@PathVariable String content) {
+        List<StoreEntity> storeList;
+        storeList = storeService.searchStoreByContent(content);
+        return storeList;
     }
 }

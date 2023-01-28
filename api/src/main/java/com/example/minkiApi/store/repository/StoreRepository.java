@@ -7,8 +7,18 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface StoreRepository extends JpaRepository<StoreEntity, Long> {
+    //아이디 내림차순으로 전부 가져오기
     List<StoreEntity> findAllByOrderByIdDesc();
 
     @Query(value = "select MAX(store_id) from store_entity", nativeQuery = true)
     Long getMaxStoreId();
+
+    //포스팅 제목으로 리스트 조회
+    List<StoreEntity> findByTitleContaining(String title);
+
+    //가게 상호명으로 리스트 조회
+    List<StoreEntity> findByStoreNameContaining(String storeName);
+
+    //포스팅 본문 내용으로 리스트 조회
+    List<StoreEntity> findByContentContaining(String content);
 }

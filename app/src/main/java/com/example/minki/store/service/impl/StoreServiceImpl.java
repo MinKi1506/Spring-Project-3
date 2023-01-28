@@ -98,5 +98,44 @@ public class StoreServiceImpl implements StoreService {
         return response;
     }
 
+    //제목으로 리스트 검색
+    @Override
+    public List<StoreEntity> searchStoreByTitle(String title) {
+        List<StoreEntity> storeEntityList;
+        storeEntityList = webClient.get()
+                .uri("/searchStoreByTitle/"+title)
+                .retrieve()
+                .bodyToFlux(StoreEntity.class)
+                .toStream()
+                .collect(Collectors.toList());
+        return storeEntityList;
+    }
+
+    //가게명으로 리스트 검색
+    @Override
+    public List<StoreEntity> searchStoreByStoreName(String storeName) {
+        List<StoreEntity> storeEntityList;
+        storeEntityList = webClient.get()
+                .uri("/searchStoreByStoreName/"+storeName)
+                .retrieve()
+                .bodyToFlux(StoreEntity.class)
+                .toStream()
+                .collect(Collectors.toList());
+        return storeEntityList;
+    }
+
+    //본문 내용으로 리스트 검색
+    @Override
+    public List<StoreEntity> searchStoreByContent(String content) {
+        List<StoreEntity> storeEntityList;
+        storeEntityList = webClient.get()
+                .uri("/searchStoreByContent/"+content)
+                .retrieve()
+                .bodyToFlux(StoreEntity.class)
+                .toStream()
+                .collect(Collectors.toList());
+        return storeEntityList;
+    }
+
 
 }

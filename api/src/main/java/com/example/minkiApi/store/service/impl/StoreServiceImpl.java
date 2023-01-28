@@ -96,7 +96,7 @@ public class StoreServiceImpl implements StoreService {
     //게시글 리스트 조회
     @Override
     public List<StoreEntity> getStoreList() {
-        List<StoreEntity> storeList = this.storeRepository.findAll();
+        List<StoreEntity> storeList = this.storeRepository.findAllByOrderByIdDesc();
         return storeList;
     }
 
@@ -105,6 +105,27 @@ public class StoreServiceImpl implements StoreService {
     public Long getMaxStoreId() {
         Long response = this.storeRepository.getMaxStoreId();
         return response;
+    }
+
+    //포스팅 제목으로 리스트 조회
+    @Override
+    public List<StoreEntity> searchStoreByTitle(String title) {
+        List<StoreEntity> storeList = this.storeRepository.findByTitleContaining(title);
+        return storeList;
+    }
+
+    //가게 상호명으로 리스트 조회
+    @Override
+    public List<StoreEntity> searchStoreByStoreName(String storeName) {
+        List<StoreEntity> storeList = this.storeRepository.findByStoreNameContaining(storeName);
+        return storeList;
+    }
+
+    //포스팅 본문 내용으로 리스트 조회
+    @Override
+    public List<StoreEntity> searchStoreByContent(String content) {
+        List<StoreEntity> storeList = this.storeRepository.findByContentContaining(content);
+        return storeList;
     }
 
 }

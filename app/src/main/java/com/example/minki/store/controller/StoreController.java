@@ -59,12 +59,38 @@ public class StoreController {
         return storeList;
     }
 
-    //최대 게시글Id 불러오기
+    //최대 storeId 조회
     @GetMapping("/getMaxStoreId")
     public Long getMaxStoreId(){
         Long response = storeService.getMaxStoreId();
         return response;
     }
+
+    //제목으로 리스트 검색
+    @GetMapping("/searchStoreByTitle/{title}")
+    public List<StoreEntity> searchStoreByTitle(@PathVariable String title) {
+        List<StoreEntity> storeList;
+        storeList = storeService.searchStoreByTitle(title);
+        return storeList;
+    }
+
+    //가게명으로 리스트 검색
+    @GetMapping("/searchStoreByStoreName/{storeName}")
+    public List<StoreEntity> searchStoreByStoreName(@PathVariable String storeName) {
+        List<StoreEntity> storeList;
+        storeList = storeService.searchStoreByStoreName(storeName);
+        return storeList;
+    }
+
+    //본문 내용으로 리스트 검색
+    @GetMapping("/searchStoreByContent/{content}")
+    public List<StoreEntity> searchStoreByContent(@PathVariable String content) {
+        List<StoreEntity> storeList;
+        storeList = storeService.searchStoreByContent(content);
+        return storeList;
+    }
+
+
 
 
 }

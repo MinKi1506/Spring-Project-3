@@ -27,4 +27,13 @@ public interface StoreService {
 
     //최대 storeId 조회
     Long getMaxStoreId();
+
+    //포스팅 제목으로 리스트 조회
+    List<StoreEntity> searchStoreByTitle(String title);
+
+    //가게 상호명으로 리스트 조회
+    List<StoreEntity> searchStoreByStoreName(String storeName);
+
+    //포스팅 본문 내용으로 리스트 조회
+    List<StoreEntity> searchStoreByContent(String content);
 }

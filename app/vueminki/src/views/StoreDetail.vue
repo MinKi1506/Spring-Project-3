@@ -456,7 +456,7 @@ export default {
         } else {
           alert("좋아요를 취소했어요.");
         }
-        this.$router.go(this.$router.currentRoute); //강제로 새로고침하여 좋아요 정보 반영
+        this.reload(); //강제로 새로고침하여 좋아요 정보 반영
       } catch (error) {
         console.log("댓글 리스트 가져오기 에러!!:" + error);
       }
@@ -480,7 +480,7 @@ export default {
         console.log("게시글 삭제 에러!!:" + error);
       }
       this.$router.push("/storeHome");
-      this.$router.go(this.$router.currentRoute); //강제로 새로고침하여 삭제된 정보 반영
+      this.reload(); //강제로 새로고침하여 삭제된 정보 반영
     },
 
     //뒤로가기
@@ -520,15 +520,15 @@ export default {
     },
 
     //해당 storeId에 사진 data 업로드
-    uploadFileInDto(storeId) {
+    async uploadFileInDto(storeId) {
       var context = this;
       let element = this.getImageSelectElement(false);
       element.click();
-      element.onchange = function () {
+      element.onchange = async function () {
         const formdata = new FormData();
         formdata.append("storeFile", this.files[0]);
         formdata.append("storeId", storeId);
-        axios
+        await axios
           .post("http://localhost:8085/dto", formdata, {
             headers: {
               "Content-Type": "multipart/form-data",
@@ -539,6 +539,11 @@ export default {
       };
     },
 
+    reload() {
+      this.$router.go(this.$router.currentRoute); //강제 새로고침
+    },
+
+    //사진 파일 삭제
     async deleteStoreFile() {
       console.log("현재 게시글의 사진 file name: " + this.files[0]);
       try {
@@ -547,7 +552,7 @@ export default {
         );
         if (response.data == 1) {
           alert("성공적으로 사진파일을 삭제했습니다!");
-          //필요하면 여기 새로고침
+          this.reload();
         } else {
           alert("사진파일 삭제에 실패했습니다.");
         }

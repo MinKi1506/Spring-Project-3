@@ -6,9 +6,7 @@ import com.example.minki.like.service.LikeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -22,9 +20,16 @@ public class LikeController {
     //좋아요
     @PostMapping("/like")
     public int onLike(@RequestBody LikeRequestVo likeRequestVo) {
-        int result = likeService.saveLike(likeRequestVo);
-        return result; //result값이 0이면 성공적으로 삭제한 것이고, 1이면 성공적으로 좋아요를 누른 것이다.
+        int response = likeService.saveLike(likeRequestVo);
+        return response; //response값이 0이면 성공적으로 삭제한 것이고, 1이면 성공적으로 좋아요를 누른 것이다.
     }
 
+    //유저가 누른 좋아요 갯수
+    @GetMapping("/like/{userId}")
+    public Long getCountLikeByUserId(@PathVariable Long userId) {
+        Long response;
+        response = likeService.userLikeCount(userId);
+        return  response;
+    }
 
 }

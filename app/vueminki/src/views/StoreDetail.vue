@@ -25,7 +25,7 @@
       <v-col>
         <v-row>
           <v-col class="d-flex justify-end px-10">
-            <v-dialog v-model="storeEditDialog" persistent width="600">
+            <v-dialog v-model="storeEditDialog" persistent width="500">
               <template v-slot:activator="{ on, attrs }">
                 <v-btn class="mt-3 mr-4" v-bind="attrs" v-on="on">
                   수정하기
@@ -36,10 +36,10 @@
                   해당 포스팅을 수정하시겠습니까?
                 </v-card-title>
 
-                <v-card-actions>
+                <div class="d-flex justify-space-around pb-5">
                   <v-btn
                     rounded
-                    color="green lighten-3"
+                    color="#E6EE9C"
                     class="pa-2"
                     @click="[(storeEditDialog = false), goStoreEdit()]"
                   >
@@ -48,12 +48,12 @@
                   <v-btn
                     rounded
                     class="pa-2"
-                    color="red lighten-3"
+                    color="grey lighten-3"
                     @click="storeEditDialog = false"
                   >
                     아니요(창닫기)
                   </v-btn>
-                </v-card-actions>
+                </div>
               </v-card>
             </v-dialog>
             <v-dialog v-model="storeDeleteDialog" persistent width="600">
@@ -62,25 +62,26 @@
               </template>
               <v-card class="px-4">
                 <v-card-title class="text-h5">
-                  해당 포스팅을 삭제하시겠습니까?
+                  해당 포스팅을 삭제 하시겠습니까?
                 </v-card-title>
-
-                <v-btn
-                  rounded
-                  class="pa-2"
-                  color="purple lighten-3"
-                  @click="deleteStore()"
-                >
-                  네, 삭제할게요.
-                </v-btn>
-                <v-btn
-                  rounded
-                  class="pa-2"
-                  color="grey lighten-3"
-                  @click="storeDeleteDialog = false"
-                >
-                  아니요, 삭제하지 않을래요.
-                </v-btn>
+                <div class="d-flex justify-space-around pb-5">
+                  <v-btn
+                    rounded
+                    class="pa-2"
+                    color="#E6EE9C"
+                    @click="deleteStore()"
+                  >
+                    네, 삭제할게요.
+                  </v-btn>
+                  <v-btn
+                    rounded
+                    class="pa-2"
+                    color="grey lighten-3"
+                    @click="storeDeleteDialog = false"
+                  >
+                    아니요, 삭제하지 않을래요.
+                  </v-btn>
+                </div>
               </v-card>
             </v-dialog>
           </v-col>
@@ -137,13 +138,13 @@
                         <v-btn
                           class="mr-2"
                           large
-                          color="primary"
+                          color="#81D4FA"
                           @click="uploadFileInDto(thisStoreId)"
                           >📷 사진 추가하기
                         </v-btn>
                         <v-btn
                           large
-                          color="warning"
+                          color="#FFAB91"
                           class="ml-2"
                           @click="deleteStoreFile()"
                         >

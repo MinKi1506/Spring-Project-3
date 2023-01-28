@@ -128,4 +128,19 @@ public class StoreServiceImpl implements StoreService {
         return storeList;
     }
 
+    //최다 추천(Best) 맛집
+    @Override
+    public StoreEntity getBestStore() {
+        StoreEntity response = this.storeRepository.findTop1ByOrderByLikeCountDesc();
+        return response;
+    }
+
+    //내가올린 맛집 포스팅 갯수
+    @Override
+    public Long getCountStoreByUserId(Long userId) {
+        Long response;
+        response = this.storeRepository.countByWriterId(userId);
+        return response;
+    }
+
 }

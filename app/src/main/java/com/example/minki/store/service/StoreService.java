@@ -33,4 +33,10 @@ public interface StoreService {
 
     //본문 내용으로 리스트 검색
     List<StoreEntity> searchStoreByContent(String content);
+
+    //최다 추천(Best) 맛집
+    StoreEntity getBestStore();
+
+    //내가올린 맛집 포스팅 갯수
+    Long getCountByUserId(Long userId);
 }

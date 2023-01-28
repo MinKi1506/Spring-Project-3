@@ -62,6 +62,7 @@ public class LikeServiceImpl implements LikeService {
         }
     }
 
+
     //포스팅 좋아요수 증가
     public void likeCountPlus(Long storeId) {
         Long response = storeRepository.findById(storeId).get().getLikeCount();
@@ -81,6 +82,15 @@ public class LikeServiceImpl implements LikeService {
         storeEntity = storeRepository.findById(storeId).get();
         storeEntity.setLikeCount(response);
         storeRepository.save(storeEntity);
+    }
+
+    //유저가 누른 좋아요 갯수
+    @Override
+    public Long userLikeCount(Long userId) {
+        Long response;
+        UserEntity userEntity = userRepository.findById(userId).get();
+        response = likeRepository.countByUserEntity_Id(userId);
+        return response;
     }
 
 

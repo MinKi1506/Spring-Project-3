@@ -9,4 +9,7 @@ public interface LikeService {
     int countLike(Long storeId);
 
     int saveLike(LikeRequestVo likeRequestVo);
+
+    //사용자가 누른 좋아요 갯수 조회
+    Long userLikeCount(Long userId);
 }

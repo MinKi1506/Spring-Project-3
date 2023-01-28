@@ -102,7 +102,7 @@
       <v-col cols="1" class="mr-4">
         <div class="d-flex flex-column justify-center" style="height: 800px">
           <!-- 작성확인 모달 -->
-          <v-dialog v-model="storeWriteConfirmDialog" persistent width="600">
+          <v-dialog v-model="storeWriteConfirmDialog" persistent width="550">
             <template v-slot:activator="{ on, attrs }">
               <v-btn class="mt-3" type="submit" v-bind="attrs" v-on="on">
                 작성 완료
@@ -113,18 +113,18 @@
                 입력하신 내용으로 게시물을 수정하시겠습니까?
               </v-card-title>
 
-              <v-card-actions>
-                <v-btn rounded color="green lighten-3" @click="updateStore()">
+              <div class="d-flex justify-space-around pb-5">
+                <v-btn rounded color="#E6EE9C" @click="updateStore()">
                   네, 이대로 수정할게요.
                 </v-btn>
                 <v-btn
                   rounded
-                  color="red lighten-3"
+                  color="grey lighten-3"
                   @click="storeWriteConfirmDialog = false"
                 >
                   아니요, 다시 검토할게요.
                 </v-btn>
-              </v-card-actions>
+              </div>
             </v-card>
           </v-dialog>
 
@@ -141,22 +141,22 @@
               </v-card-title>
               <h5 class="px-3">입력하신 내용은 삭제됩니다.</h5>
 
-              <v-card-actions>
+              <div class="d-flex justify-space-around pb-5">
                 <v-btn
                   rounded
-                  color="green lighten-3"
-                  @click="storeWriteCancelDialog = false"
-                >
-                  아니요, 계속 수정할게요.
-                </v-btn>
-                <v-btn
-                  rounded
-                  color="red lighten-3"
+                  color="#E6EE9C"
                   @click="[(storeWriteCancelDialog = false), goBack()]"
                 >
                   네, 이전화면으로 돌아갈래요.
                 </v-btn>
-              </v-card-actions>
+                <v-btn
+                  rounded
+                  color="grey lighten-3"
+                  @click="storeWriteCancelDialog = false"
+                >
+                  아니요, 계속 수정할게요.
+                </v-btn>
+              </div>
             </v-card>
           </v-dialog>
         </div>

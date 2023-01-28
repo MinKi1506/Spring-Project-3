@@ -90,4 +90,23 @@ public class StoreController {
         storeList = storeService.searchStoreByContent(content);
         return storeList;
     }
+
+
+    //최다 추천(Best) 맛집
+    @GetMapping("/getBestStore")
+    public StoreEntity getBestStore(){
+        StoreEntity response;
+        response = storeService.getBestStore();
+        return  response;
+    }
+
+    //내가올린 맛집 포스팅 갯수
+    @GetMapping("/getCountStore/{userId}")
+    public Long getCountStoreByUserId(@PathVariable Long userId){
+        Long response;
+        response = storeService.getCountStoreByUserId(userId);
+        return  response;
+    }
+
+    //내가올린 다이어트 포스팅 갯수
 }

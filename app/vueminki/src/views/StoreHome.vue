@@ -38,13 +38,14 @@
     <v-row>
       <v-col class="d-flex justify-end mb-4">
         <v-btn @click="goStoreAdd()" class="mr-16" color="blue lighten-3"
-          >포스팅 하기</v-btn
+          >📝 포스팅 하기</v-btn
         >
       </v-col>
     </v-row>
 
     <div class="px-16 d-flex flex-column justify-center">
       <v-card
+        color="#E6EE9C"
         class="px-14 py-3 overflow-y-auto"
         height="800"
         max-height="800"
@@ -53,7 +54,7 @@
         <!-- 여기서부터 -->
         <v-card
           height="350"
-          class="px-3 my-2"
+          class="px-3 my-6"
           v-for="(item, i) in items"
           :key="i"
           @click="goDetail(item.storeId)"
@@ -225,7 +226,7 @@ export default {
         this.searchStoreByTitle();
       } else if (this.selectedCategory == "맛집 상호명으로 검색") {
         this.searchStoreByStoreName();
-      } else {
+      } else if (this.selectedCategory == "본문 내용으로 검색") {
         this.searchStoreByContent();
       }
     },
@@ -305,43 +306,42 @@ export default {
         console.log("제목으로 검색하기 에러!!:" + error);
       }
     },
-  },
+    //포스팅 본문 내용으로 검색
+    async searchStoreByContent() {
+      var vm = this;
+      vm.items = [];
+      try {
+        const response = await axios.get(
+          "http://localhost:8083/searchStoreByContent/" + this.searchKeyword
+        );
+        this.storeList = response.data;
+        console.log("본문 검색으로 받아온 맛집 포스팅 리스트" + response.data);
+        for (let i = 0; i < response.data.length; i++) {
+          vm.item.storeId = this.storeList[i].id;
+          vm.item.title = this.storeList[i].title;
+          vm.item.content = this.storeList[i].content;
+          vm.item.storeName = this.storeList[i].storeName;
+          vm.item.address = this.storeList[i].address;
+          vm.item.menu = this.storeList[i].menu;
+          vm.item.travelTime = this.storeList[i].travelTime;
+          vm.item.likeCount = this.storeList[i].likeCount;
+          vm.item.commentCount = this.storeList[i].commentCount;
 
-  //포스팅 본문 내용으로 검색
-  async searchStoreByContent() {
-    var vm = this;
-    vm.items = [];
-    try {
-      const response = await axios.get(
-        "http://localhost:8083/searchStoreByContent/" + this.searchKeyword
-      );
-      this.storeList = response.data;
-      console.log("본문 검색으로 받아온 맛집 포스팅 리스트" + response.data);
-      for (let i = 0; i < response.data.length; i++) {
-        vm.item.storeId = this.storeList[i].id;
-        vm.item.title = this.storeList[i].title;
-        vm.item.content = this.storeList[i].content;
-        vm.item.storeName = this.storeList[i].storeName;
-        vm.item.address = this.storeList[i].address;
-        vm.item.menu = this.storeList[i].menu;
-        vm.item.travelTime = this.storeList[i].travelTime;
-        vm.item.likeCount = this.storeList[i].likeCount;
-        vm.item.commentCount = this.storeList[i].commentCount;
+          let year = this.storeList[i].createdDateTime.substring(0, 4);
+          let month = this.storeList[i].createdDateTime.substring(5, 7);
+          let day = this.storeList[i].createdDateTime.substring(8, 10);
+          vm.item.createdDateTime =
+            year + "년 " + month + "월 " + day + "일에 작성된 글입니다.";
 
-        let year = this.storeList[i].createdDateTime.substring(0, 4);
-        let month = this.storeList[i].createdDateTime.substring(5, 7);
-        let day = this.storeList[i].createdDateTime.substring(8, 10);
-        vm.item.createdDateTime =
-          year + "년 " + month + "월 " + day + "일에 작성된 글입니다.";
+          vm.items.push(vm.item); //비워준 items에 item (=store data)을 하나씩 추가
+          vm.item = {};
 
-        vm.items.push(vm.item); //비워준 items에 item (=store data)을 하나씩 추가
-        vm.item = {};
-
-        console.log("검색해서 변경된 items 리스트:" + vm.items);
+          console.log("검색해서 변경된 items 리스트:" + vm.items);
+        }
+      } catch (error) {
+        console.log("제목으로 검색하기 에러!!:" + error);
       }
-    } catch (error) {
-      console.log("제목으로 검색하기 에러!!:" + error);
-    }
+    },
   },
 };
 </script>

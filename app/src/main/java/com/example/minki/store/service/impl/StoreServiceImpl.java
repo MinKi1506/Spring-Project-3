@@ -137,5 +137,29 @@ public class StoreServiceImpl implements StoreService {
         return storeEntityList;
     }
 
+    //최다 추천(Best) 맛집
+    @Override
+    public StoreEntity getBestStore() {
+        StoreEntity response;
+        response = webClient.get()
+                .uri("/getBestStore")
+                .retrieve()
+                .bodyToMono(StoreEntity.class)
+                .block();
+        return response;
+    }
+
+    //내가올린 맛집 포스팅 갯수
+    @Override
+    public Long getCountByUserId(Long userId) {
+        Long response;
+        response = webClient.get()
+                .uri("/getCountStore/"+userId)
+                .retrieve()
+                .bodyToMono(Long.class)
+                .block();
+        return response;
+    }
+
 
 }

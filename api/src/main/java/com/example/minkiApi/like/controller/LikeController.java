@@ -5,7 +5,6 @@ import com.example.minkiApi.like.service.LikeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -24,6 +23,14 @@ public class LikeController {
         Long userId = likeRequestVo.getUserId();
         int result = likeService.saveLike(storeId,userId);
         return result;
+    }
+
+    //사용자가 누른 좋아요 갯수 조회
+    @GetMapping("/like/{userId}")
+    public Long getCountLikeByUserId(@PathVariable Long userId) {
+        Long likeCount;
+        likeCount = likeService.userLikeCount(userId);
+        return likeCount;
     }
 
 //    @GetMapping

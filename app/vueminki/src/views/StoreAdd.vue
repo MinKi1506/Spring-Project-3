@@ -102,7 +102,7 @@
       <v-col cols="1" class="mr-4">
         <div class="d-flex flex-column justify-center" style="height: 800px">
           <!-- 작성확인 모달 -->
-          <v-dialog v-model="storeWriteConfirmDialog" persistent width="400">
+          <v-dialog v-model="storeWriteConfirmDialog" persistent width="550">
             <template v-slot:activator="{ on, attrs }">
               <v-btn class="mt-3" type="submit" v-bind="attrs" v-on="on">
                 작성 완료
@@ -112,24 +112,22 @@
               <v-card-title class="text-h5">
                 입력하신 내용으로 게시물을 등록하시겠습니까?
               </v-card-title>
-
-              <v-card-actions>
-                <v-btn rounded color="gray lighten-3" @click="uploadStore()">
-                  등록
+              <div class="d-flex justify-space-around pb-5">
+                <v-btn color="#E6EE9C" @click="uploadStore()">
+                  네, 이대로 등록할래요.
                 </v-btn>
                 <v-btn
-                  rounded
-                  color="gray lighten-3"
+                  color="grey lighten-3"
                   @click="storeWriteConfirmDialog = false"
                 >
-                  취소
+                  아니요, 다시 확인해볼게요.
                 </v-btn>
-              </v-card-actions>
+              </div>
             </v-card>
           </v-dialog>
 
           <!-- 작성취소 모달 -->
-          <v-dialog v-model="storeWriteCancelDialog" persistent width="400">
+          <v-dialog v-model="storeWriteCancelDialog" persistent width="550">
             <template v-slot:activator="{ on, attrs }">
               <v-btn class="mt-3" type="submit" v-bind="attrs" v-on="on">
                 작성 취소
@@ -139,17 +137,21 @@
               <v-card-title class="text-h5">
                 게시판 목록화면으로 돌아가시겠습니까?
               </v-card-title>
-              <h3>입력하신 내용은 삭제됩니다.</h3>
-
-              <v-card-actions>
+              <h3>입력하신 내용은 삭제 됩니다.</h3>
+              <div class="d-flex justify-space-around pb-5">
                 <v-btn
-                  rounded
-                  color="gray lighten-3"
+                  color="#E6EE9C"
                   @click="[(storeWriteCancelDialog = false), goBack()]"
                 >
-                  닫기
+                  네, 포스팅을 멈출게요.
                 </v-btn>
-              </v-card-actions>
+                <v-btn
+                  color="grey lighten-3"
+                  @click="storeWriteCancelDialog = false"
+                >
+                  아니요, 계속 작성하겠습니다.
+                </v-btn>
+              </div>
             </v-card>
           </v-dialog>
         </div>

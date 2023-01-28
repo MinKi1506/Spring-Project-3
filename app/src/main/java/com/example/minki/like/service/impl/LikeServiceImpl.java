@@ -38,6 +38,18 @@ public class LikeServiceImpl implements LikeService {
         return response;
     }
 
+    //사용자가 누른 좋아요 갯수 조회
+    @Override
+    public Long userLikeCount(Long userId) {
+        Long response;
+        response = webClient.get()
+                .uri("/like/"+userId)
+                .retrieve()
+                .bodyToMono(Long.class)
+                .block();
+        return response;
+    }
+
     //@Override
 //public int findLike(Long storeId, Long userId) {
 //

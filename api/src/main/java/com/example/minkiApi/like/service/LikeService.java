@@ -1,7 +1,5 @@
 package com.example.minkiApi.like.service;
 
-import com.example.minkiApi.like.model.vo.LikeRequestVo;
-
 public interface LikeService {
 //    String likeBoard(Long storeId);
 
@@ -9,5 +7,7 @@ public interface LikeService {
     int countLike(Long storeId, Long userId);
 
     int saveLike(Long storeId, Long userId);
+
+    Long userLikeCount(Long userId);
 
 }

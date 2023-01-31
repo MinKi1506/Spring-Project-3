@@ -211,7 +211,7 @@ export default {
 
     async uploadStore() {
       try {
-        await axios.post("http://localhost:8083/addStore", this.item);
+        await axios.post("/addStore", this.item);
       } catch (error) {
         console.log("맛집 포스팅 등록 에러:" + error);
       }

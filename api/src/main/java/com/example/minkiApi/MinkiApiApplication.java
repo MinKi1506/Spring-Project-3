@@ -12,4 +12,6 @@ public class MinkiApiApplication {
 		SpringApplication.run(MinkiApiApplication.class, args);
 	}
 
+
+
 }

@@ -110,7 +110,7 @@ export default {
       var vm = this;
 
       await axios({
-        url: "http://localhost:8083/signIn",
+        url: "/signIn",
         method: "POST",
         data: {
           email: this.email,

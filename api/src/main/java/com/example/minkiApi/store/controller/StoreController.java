@@ -7,6 +7,7 @@ import com.example.minkiApi.store.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,13 @@ import java.util.Optional;
 @Slf4j
 //@CrossOrigin
 public class StoreController {
+
+    @GetMapping("/minkiConfigTest")
+    public String response(@Value("${minki.comment}") String comment,
+                           @Value("${minki.description}") String description){
+        return "minki.comment는 "+ comment + "/n" + "minki.description은 "+ description;
+    }
+
 
     @Autowired
     private final StoreService storeService;

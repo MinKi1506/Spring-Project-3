@@ -177,7 +177,7 @@ export default {
     async getStoreList() {
       var vm = this;
       try {
-        const response = await axios.get("http://localhost:8083/getStoreList");
+        const response = await axios.get("/getStoreList");
         this.storeList = response.data;
         console.log("받아온 모든 맛집 포스팅" + response.data);
         for (let i = 0; i < response.data.length; i++) {
@@ -237,7 +237,7 @@ export default {
       vm.items = [];
       try {
         const response = await axios.get(
-          "http://localhost:8083/searchStoreByTitle/" + this.searchKeyword
+          "/searchStoreByTitle/" + this.searchKeyword
         );
         this.storeList = response.data;
         console.log("제목 검색으로 받아온 맛집 포스팅 리스트" + response.data);
@@ -274,7 +274,7 @@ export default {
       vm.items = [];
       try {
         const response = await axios.get(
-          "http://localhost:8083/searchStoreByStoreName/" + this.searchKeyword
+          "/searchStoreByStoreName/" + this.searchKeyword
         );
         this.storeList = response.data;
         console.log(
@@ -312,7 +312,7 @@ export default {
       vm.items = [];
       try {
         const response = await axios.get(
-          "http://localhost:8083/searchStoreByContent/" + this.searchKeyword
+          "/searchStoreByContent/" + this.searchKeyword
         );
         this.storeList = response.data;
         console.log("본문 검색으로 받아온 맛집 포스팅 리스트" + response.data);

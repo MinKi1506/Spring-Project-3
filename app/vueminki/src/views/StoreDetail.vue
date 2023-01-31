@@ -351,7 +351,7 @@ export default {
       try {
         const response = await axios.get(
           // "http://localhost:8083/getStore/" + this.$route.params.storeId
-          "http://localhost:8083/getStore/" + this.thisStoreId
+          "/getStore/" + this.thisStoreId
         );
         this.item.title = response.data.title;
         this.item.content = response.data.content;
@@ -379,9 +379,7 @@ export default {
     //유저 정보 가져오기(게시글 글쓴이)
     async getWriterName() {
       try {
-        const response = await axios.get(
-          "http://localhost:8083/getUserName/" + this.item.writerId
-        );
+        const response = await axios.get("/getUserName/" + this.item.writerId);
         this.writerName = response.data;
         console.log(response.data);
         console.log(response.data.name);
@@ -394,9 +392,7 @@ export default {
     //유저 정보 가져오기(댓글 글쓴이)
     async getCommentWriterName() {
       try {
-        const response = await axios.get(
-          "http://localhost:8083/getUserName/" + this.item.writerId
-        );
+        const response = await axios.get("/getUserName/" + this.item.writerId);
         this.writerName = response.data;
         console.log(response.data);
         console.log(response.data.name);
@@ -409,13 +405,10 @@ export default {
     //댓글 등록하기
     async addComment() {
       try {
-        await axios.post(
-          `http://localhost:8083/store/${this.thisStoreId}/comment`,
-          {
-            content: this.commentAddText,
-            writerId: this.$store.state.userId,
-          }
-        );
+        await axios.post(`/store/${this.thisStoreId}/comment`, {
+          content: this.commentAddText,
+          writerId: this.$store.state.userId,
+        });
       } catch (error) {
         console.log("댓글 입력하기 에러!!:" + error);
       }
@@ -428,9 +421,7 @@ export default {
     async getCommentList() {
       var vm = this;
       try {
-        const response = await axios.get(
-          `http://localhost:8083/store/${this.thisStoreId}/comment`
-        );
+        const response = await axios.get(`/store/${this.thisStoreId}/comment`);
         this.commentList = response.data;
         console.log("받아온 모든 댓글리스트" + response.data);
         for (let i = 0; i < response.data.length; i++) {
@@ -448,7 +439,7 @@ export default {
     //맛집 포스팅 좋아요
     async storeLike() {
       try {
-        const response = await axios.post("http://localhost:8083/like", {
+        const response = await axios.post("/like", {
           userId: parseInt(sessionStorage.getItem("loginedId")),
           storeId: this.thisStoreId,
         });
@@ -476,7 +467,7 @@ export default {
     //게시글 삭제 메서드
     deleteStore() {
       try {
-        axios.delete(`http://localhost:8083/deleteStore/${this.thisStoreId}`);
+        axios.delete(`/deleteStore/${this.thisStoreId}`);
       } catch (error) {
         console.log("게시글 삭제 에러!!:" + error);
       }
@@ -497,9 +488,7 @@ export default {
 
     //해당 storeId를 가진 사진 data 가져와서 띄우기
     async fetchFiles() {
-      const response = await axios.get(
-        `http://localhost:8085/files/${this.thisStoreId}`
-      );
+      const response = await axios.get(`/files/${this.thisStoreId}`);
       this.files = response.data;
     },
 

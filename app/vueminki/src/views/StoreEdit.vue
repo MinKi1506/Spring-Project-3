@@ -220,7 +220,7 @@ export default {
       try {
         const response = await axios.get(
           // "http://localhost:8083/getStore/" + this.$route.params.storeId
-          "http://localhost:8083/getStore/" + this.thisStoreId
+          "/getStore/" + this.thisStoreId
         );
         this.item.title = response.data.title;
         this.item.content = response.data.content;
@@ -237,7 +237,7 @@ export default {
     async updateStore() {
       try {
         await axios.put(
-          "http://localhost:8083/updateStore/" + this.$route.params.storeId,
+          "/updateStore/" + this.$route.params.storeId,
           this.updateItem
         );
       } catch (error) {

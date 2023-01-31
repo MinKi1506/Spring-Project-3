@@ -104,7 +104,6 @@ public class StoreFileController {
 //                .collect(Collectors.toList());
     }
 
-
     //프론트(Vue)단에서 보낸 multipartFile/FormData 내부에 "files"라는 이름의 파일들이 서버로 전달된다.
     //파일을 저장할 경로를 결정한 뒤, 출력 스트림(ouput stream)을 통해 업로드된 파일의 바이트 정보를 출력
     //업로드한 파일들은 서버의 파일 시스템에 저장됨.

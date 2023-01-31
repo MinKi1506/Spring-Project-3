@@ -22,6 +22,12 @@
 
 	<dependencies>
 
+<!--		spring cloud bus + rabbitMQ 의존성-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+
 <!--		spring config client 의존성-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -34,13 +40,13 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-
-
+<!--		jpa 의존성-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+<!--		spring boot web 의존성-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -53,12 +59,14 @@
 			<optional>true</optional>
 		</dependency>
 
+<!--		maria DB 의존성-->
 		<dependency>
 			<groupId>org.mariadb.jdbc</groupId>
 			<artifactId>mariadb-java-client</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
+<!--		lombok 의존성-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -97,6 +105,7 @@
 		</dependency>
 	</dependencies>
 
+<!--	spring cloud 버젼 통합/정리해주는 의존성 매니져-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

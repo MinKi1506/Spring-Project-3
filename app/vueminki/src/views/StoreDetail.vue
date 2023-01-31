@@ -488,7 +488,9 @@ export default {
 
     //해당 storeId를 가진 사진 data 가져와서 띄우기
     async fetchFiles() {
-      const response = await axios.get(`/files/${this.thisStoreId}`);
+      const response = await axios.get(
+        `http://localhost:8085/files/${this.thisStoreId}`
+      );
       this.files = response.data;
     },
 

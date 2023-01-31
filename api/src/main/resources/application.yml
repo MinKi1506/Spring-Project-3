@@ -39,9 +39,17 @@ spring:
       maxRequestSize: 20MB
       enabled: true
 
+  rabbitmq:
+    host: 100.0.0.157
+    port: 25672
+    username: minki
+    password: 1234
+
+
 # config client에서 Actuator 설정
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+

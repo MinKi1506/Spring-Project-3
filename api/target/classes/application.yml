@@ -1,5 +1,5 @@
 server:
-  port: 8086
+  port: 8085
 
 spring:
   application:
@@ -39,6 +39,7 @@ spring:
       maxRequestSize: 20MB
       enabled: true
 
+#rabbitMQ 설정
   rabbitmq:
     host: 100.0.0.157
     port: 25672
@@ -51,5 +52,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: busrefresh
+#        include: "*"
 

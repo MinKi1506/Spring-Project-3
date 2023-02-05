@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,15 +17,15 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
+@RefreshScope
 //@CrossOrigin
 public class StoreController {
 
+    //spring cloud api 테스트
     @GetMapping("/minkiConfigTest")
-    public String response(@Value("${minki.comment}") String comment,
-                           @Value("${minki.description}") String description){
-        return "minki.comment는 "+ comment + "/n" + "minki.description은 "+ description;
+    public String response(@Value("${test.minki}") String minki){
+        return "테스트한 문자열: "+ minki;
     }
-
 
     @Autowired
     private final StoreService storeService;

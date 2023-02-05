@@ -40,7 +40,9 @@
               :rules="passwordRules"
               label="패스워드"
               required
-            ></v-text-field>
+              type="password"
+              counter
+            />
 
             <!-- <v-checkbox
               v-model="checkbox"

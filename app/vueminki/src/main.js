@@ -10,7 +10,7 @@ Vue.config.productionTip = false;
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
 
-// axios.defaults.baseURL = "http://192.168.50.147:8083";
+// axios.defaults.baseURL = "http://100.0.0.157:28083";
 axios.defaults.baseURL = "http://localhost:8083";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 

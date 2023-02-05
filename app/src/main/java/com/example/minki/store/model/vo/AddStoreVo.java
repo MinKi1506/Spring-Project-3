@@ -21,7 +21,7 @@ public class AddStoreVo {
     private Long writerId;
 
 
-    //Entity를 Vo화 시키는 생성
+    //Entity를 Vo화 시키는 생성자
     public AddStoreVo(StoreEntity storeEntity){
         this.title = storeEntity.getTitle();
         this.createdDateTime = storeEntity.getCreatedDateTime();

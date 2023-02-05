@@ -40,7 +40,7 @@ public class CommentServiceImpl implements CommentService {
         return response;
     }
 
-    // 댓글 조회
+    // 댓글 리스트 조회
     @Override
     @Transactional
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -60,7 +60,7 @@ public class CommentServiceImpl implements CommentService {
     // 댓글 삭제
     @Transactional
     @Override
-    public List<Comment> deleteComment(Long commentId, Long storeId) {
+    public void deleteComment(Long commentId, Long storeId) {
         List<Comment> commentList;
         commentList = webClient.delete()
                 .uri("/store/"+storeId+"/comment/"+commentId)
@@ -68,7 +68,6 @@ public class CommentServiceImpl implements CommentService {
                 .bodyToFlux(Comment.class)
                 .toStream()
                 .collect(Collectors.toList());
-        return commentList;
     }
 
     //댓글 수정

@@ -40,6 +40,6 @@ public interface StoreService {
     //최다 추천(Best) 맛집
     StoreEntity getBestStore();
 
-    //내가올린 맛집 포스팅 갯수
+    //내가올린 맛집 포스팅 갯수트
     Long getCountStoreByUserId(Long userId);
 }

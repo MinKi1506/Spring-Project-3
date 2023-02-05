@@ -2,15 +2,15 @@
   <div style="height: 100%">
     <SideNav />
     <v-row class="py-1">
-      <v-col>
+      <v-col class="ml-4 pl-4">
         맛집 게시판 - 포스팅 <span class="orange--text">수정</span>
       </v-col>
     </v-row>
-    <v-divider class="pt-5"></v-divider>
+    <v-divider class="pt-8"></v-divider>
 
-    <v-row class="d-flex justify-around">
-      <v-col cols="10" class="ml-4">
-        <v-card class="px-4 py-4" height="950">
+    <v-row class="d-flex justify-center">
+      <v-col cols="6" class="ml-4">
+        <v-card class="px-4 py-2" height="900" color="#B2EBF2">
           <h4>포스팅 제목</h4>
           <v-text-field
             v-model="updateItem.title"
@@ -58,42 +58,16 @@
           ></v-text-field>
 
           <v-row class="d-flex justify-around">
-            <v-col cols="7" class="d-flex flex-column">
+            <v-col class="d-flex flex-column">
               <h3>본문</h3>
               <v-text-field
                 v-model="updateItem.content"
                 solo
                 clearable
                 class=""
-                height="200"
+                height="180"
                 :placeholder="item.content"
               ></v-text-field>
-            </v-col>
-            <v-col
-              cols="5"
-              class="d-flex flex-column justify-center align-center"
-            >
-              <h3>대표 이미지</h3>
-              <div class="d-flex align-center">
-                <v-img
-                  src="../assets/food.jpg"
-                  max-height="200"
-                  max-width="320"
-                ></v-img>
-                <v-btn class="ml-3" rounded>사진 초기화</v-btn>
-              </div>
-              <!-- 사진 업로드 file input -->
-              <v-file-input
-                v-model="files"
-                style="width: 500px"
-                height="60"
-                small-chips
-                counter
-                multiple
-                label="사진 첨부"
-                prepend-icon="mdi-camera"
-              ></v-file-input>
-              <p>파일 네임: {{ files.name }}</p>
             </v-col>
           </v-row>
         </v-card>
@@ -104,8 +78,14 @@
           <!-- 작성확인 모달 -->
           <v-dialog v-model="storeWriteConfirmDialog" persistent width="550">
             <template v-slot:activator="{ on, attrs }">
-              <v-btn class="mt-3" type="submit" v-bind="attrs" v-on="on">
-                작성 완료
+              <v-btn
+                class="mt-3"
+                type="submit"
+                color="#C5CAE9"
+                v-bind="attrs"
+                v-on="on"
+              >
+                📝 작성 완료
               </v-btn>
             </template>
             <v-card class="px-2">
@@ -131,8 +111,14 @@
           <!-- 작성취소 모달 -->
           <v-dialog v-model="storeWriteCancelDialog" persistent width="600">
             <template v-slot:activator="{ on, attrs }">
-              <v-btn class="mt-3" type="submit" v-bind="attrs" v-on="on">
-                수정 취소
+              <v-btn
+                class="mt-3"
+                type="submit"
+                color="#CFD8DC"
+                v-bind="attrs"
+                v-on="on"
+              >
+                ❌ 수정 취소
               </v-btn>
             </template>
             <v-card class="px-2">

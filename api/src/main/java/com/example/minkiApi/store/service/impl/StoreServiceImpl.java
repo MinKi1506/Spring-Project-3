@@ -5,7 +5,6 @@ import com.example.minkiApi.store.model.entity.StoreEntity;
 import com.example.minkiApi.store.model.vo.AddStoreVo;
 import com.example.minkiApi.store.repository.StoreRepository;
 import com.example.minkiApi.store.service.StoreService;
-import com.example.minkiApi.storeFile.repository.StoreFileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +21,6 @@ public class StoreServiceImpl implements StoreService {
 
     @Autowired
     private final StoreRepository storeRepository;
-
-    @Autowired
-    private final StoreFileRepository storeFileRepository;
 
     //게시글 작성
     @Override

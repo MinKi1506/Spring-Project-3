@@ -34,10 +34,8 @@ public class CommentController {
 
     //댓글 삭제
     @DeleteMapping("/store/{storeId}/comment/{commentId}")
-    public List<Comment> deleteComment(@PathVariable Long storeId, @PathVariable Long commentId){
-        List<Comment> commentList;
-        commentList = commentService.deleteComment(commentId, storeId);
-        return commentList;
+    public void deleteComment(@PathVariable Long storeId, @PathVariable Long commentId){
+        commentService.deleteComment(commentId, storeId);
     }
 
     //댓글 수정

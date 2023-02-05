@@ -1,115 +1,139 @@
 <template>
   <div>
     <SideNav />
-    <v-row class="py-4">
-      <v-col> 맛집 게시판 </v-col>
-    </v-row>
-    <v-divider class="pt-8"></v-divider>
+    <v-img src="https://wallpaperaccess.com/full/6670365.jpg">
+      <v-row class="py-4">
+        <v-col class="ml-4 pl-4"> 맛집 게시판 </v-col>
+      </v-row>
+      <v-divider class="pt-8"></v-divider>
 
-    <v-row class="d-flex justify-center align-center" style="height: 50px">
-      <v-col>
-        <v-form v-on:submit.prevent="searchStore">
-          <v-row class="d-flex justify-center align-center">
-            <v-col cols="2">
-              <v-select
-                v-model="selectedCategory"
-                :items="keywordCategory"
-                label="검색 종류"
-                solo
-              ></v-select>
-            </v-col>
-            <v-col class="ml-16" cols="4">
-              <v-text-field
-                v-model="searchKeyword"
-                height=""
-                label="검색 키워드를 입력하세요"
-                outlined
-                clearable
-              ></v-text-field>
-            </v-col>
-            <v-col class="d-flex justify-center align-center" cols="1">
-              <v-btn type="submit" class="mb-8">🔍검색하기</v-btn>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-col>
-    </v-row>
+      <v-row class="d-flex justify-center align-center" style="height: 50px">
+        <v-col>
+          <v-form v-on:submit.prevent="searchStore">
+            <v-row class="d-flex justify-center align-center">
+              <v-col cols="2">
+                <v-select
+                  v-model="selectedCategory"
+                  :items="keywordCategory"
+                  label="검색 종류"
+                  solo
+                ></v-select>
+              </v-col>
+              <v-col class="ml-16" cols="4">
+                <v-text-field
+                  v-model="searchKeyword"
+                  height=""
+                  label="검색 키워드를 입력하세요"
+                  outlined
+                  clearable
+                ></v-text-field>
+              </v-col>
+              <v-col class="d-flex justify-center align-center" cols="1">
+                <v-btn type="submit" class="mb-8">🔍검색하기</v-btn>
+              </v-col>
+            </v-row>
+          </v-form>
+        </v-col>
+      </v-row>
 
-    <v-row>
-      <v-col class="d-flex justify-end mb-4">
-        <v-btn @click="goStoreAdd()" class="mr-16" color="blue lighten-3"
-          >📝 포스팅 하기</v-btn
-        >
-      </v-col>
-    </v-row>
+      <v-row>
+        <v-col class="d-flex justify-end mb-3">
+          <v-btn @click="goStoreAdd()" class="mr-16" color="blue lighten-3"
+            >📝 포스팅 하기</v-btn
+          >
+        </v-col>
+      </v-row>
 
-    <div class="px-16 d-flex flex-column justify-center">
-      <v-card
-        color="#E6EE9C"
-        class="px-14 py-3 overflow-y-auto"
-        height="800"
-        max-height="800"
-        v-scroll:#scroll-target="onScroll"
-      >
-        <!-- 여기서부터 -->
-        <v-card
-          height="350"
-          class="px-3 my-6"
-          v-for="(item, i) in items"
-          :key="i"
-          @click="goDetail(item.storeId)"
-        >
-          <v-row>
-            <v-col class="d-flex justify-center">
-              <h5 class="smallFont">{{ item.title }}</h5>
-            </v-col>
-          </v-row>
+      <v-row class="px-16 d-flex flex-column justify-center align-center">
+        <v-col cols="5">
+          <v-card
+            color="#EF5350"
+            class="px-8 py-3 overflow-y-auto"
+            height="800"
+            max-height="800"
+            v-scroll:#scroll-target="onScroll"
+          >
+            <v-card class="px-4 py-2" color="#FFCDD2">
+              <!-- 여기서부터 -->
+              <v-card
+                height="370"
+                class="px-3 my-4 smallSmallFont"
+                v-for="(item, i) in items"
+                :key="i"
+                @click="goDetail(item.storeId)"
+              >
+                <v-row>
+                  <v-col class="d-flex justify-start">
+                    <p class="smallSmallFont">
+                      {{ item.storeId }}번 째 맛집:
+                      <span class="smallFont">"{{ item.title }}"</span>
+                    </p>
+                  </v-col>
+                </v-row>
 
-          <v-row>
-            <v-col>
-              <v-img src="../assets/food.jpg" max-height="300" max-width="280">
-              </v-img>
-            </v-col>
-            <v-col class="d-flex flex-column">
-              <p class="align-self-start" style="font-size: 25px">
-                {{ item.createdDateTime }}
-              </p>
-              <p style="font-size: 20px">{{ item.content }}</p>
-            </v-col>
-          </v-row>
+                <v-row>
+                  <v-col class="d-flex flex-column">
+                    <p class="align-self-start smallSmallFont">
+                      <span class="smallSmallFont" style="color: #757575">
+                        "{{ item.createdDateTime }}"
+                      </span>
+                    </p>
+                    <p>
+                      상호명:
+                      <span class="smallSmallFont" style="color: #757575">{{
+                        item.storeName
+                      }}</span>
+                    </p>
+                    <p>
+                      주소:
+                      <span class="smallSmallFont" style="color: #757575">{{
+                        item.address
+                      }}</span>
+                    </p>
+                    <p>
+                      주 메뉴:
+                      <span class="smallSmallFont" style="color: #757575">{{
+                        item.menu
+                      }}</span>
+                    </p>
+                  </v-col>
+                </v-row>
 
-          <v-divider class="my-4"></v-divider>
+                <v-divider class="my-4"></v-divider>
 
-          <v-row class="d-flex justify-start align-start">
-            <v-col cols="6" class="">
-              <h6 class="">
-                '회사로부터 걸어서 &nbsp;<span class="red--text">{{
-                  item.travelTime
-                }}</span>
-                분 거리에 있어요!'
-              </h6>
-            </v-col>
-            <v-col cols="3" class="d-flex align-start justify-center">
-              <v-img
-                src="../assets/storeLike.png"
-                max-width="50px"
-                max-height="60px"
-              ></v-img>
-              <p class="">{{ item.likeCount }}</p>
-            </v-col>
-            <v-col cols="3" class="d-flex align-start">
-              <v-img
-                src="../assets/comment.png"
-                max-width="40px"
-                max-height="60px"
-              ></v-img>
-              <p>{{ item.commentCount }}</p>
-            </v-col>
-          </v-row>
-        </v-card>
-        <!-- 여기까지 1개 -->
-      </v-card>
-    </div>
+                <v-row class="d-flex justify-start align-start">
+                  <v-col cols="6" class="">
+                    <h6 class="">
+                      🏢 회사로부터 걸어서 &nbsp;<span class="red--text">{{
+                        item.travelTime
+                      }}</span>
+                      분 거리에 있어요!
+                    </h6>
+                  </v-col>
+                  <v-col cols="3" class="d-flex align-start justify-center">
+                    <v-img
+                      src="../assets/storeLike.png"
+                      max-width="50px"
+                      max-height="60px"
+                    ></v-img>
+                    <p class="">{{ item.likeCount }}</p>
+                  </v-col>
+                  <v-col cols="3" class="d-flex align-start">
+                    <v-img
+                      src="../assets/comment.png"
+                      max-width="40px"
+                      max-height="60px"
+                    ></v-img>
+                    <p>{{ item.commentCount }}</p>
+                  </v-col>
+                </v-row>
+              </v-card>
+              <!-- 여기까지 1개 -->
+            </v-card>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-img>
   </div>
 </template>
 
@@ -120,7 +144,6 @@ import SideNav from "../components/SideNav.vue";
 export default {
   data() {
     return {
-      maxStoreId: 0,
       searchKeyword: "",
       keywordCategory: [
         "제목으로 검색",
@@ -156,23 +179,6 @@ export default {
     this.getStoreList();
   },
   methods: {
-    // //현재 포스팅의 최대값 조회
-    // async getMaxStoreId() {
-    //   // var vm = this;
-    //   try {
-    //     const response = await axios.get("http://localhost:8083/getMaxStoreId");
-    //     console.log("맛집 포스팅 최대값은" + response.data);
-    //     this.maxStoreId = response.data;
-
-    //     this.$store.commit("setMaxStoreId", response.data);
-    //     console.log(
-    //       "store에 저장된 맛집 포스팅 최대값" + this.$store.state.maxStoreId
-    //     );
-    //   } catch (error) {
-    //     console.log("에러" + error);
-    //   }
-    // },
-
     //전체 맛집 포스팅 리스트 조회
     async getStoreList() {
       var vm = this;

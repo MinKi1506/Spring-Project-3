@@ -5,7 +5,7 @@
         <v-img :gradient="gradient" v-bind="props" />
       </template>
 
-      <div class="b-flex w-100">
+      <div class="d-flex flex-column">
         <v-list-item>
           <v-list-item-content>
             <v-list-item-subtitle>
@@ -37,13 +37,13 @@
         </v-list>
         <div class="w-500px"></div>
 
-        <div class="white align-self-bottom">
+        <!-- <div class="white align-self-end">
           <v-img
             :src="require('../assets/okestro.png')"
             width="200px"
             height="60px"
           ></v-img>
-        </div>
+        </div> -->
       </div>
     </v-navigation-drawer>
   </div>

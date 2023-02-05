@@ -6,8 +6,9 @@ import com.example.minki.store.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.support.SimpleTriggerContext;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,7 +18,16 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
+@RefreshScope
 public class StoreController {
+
+
+    //spring cloud api 테스트
+    @GetMapping("/minkiConfigTest")
+    public String response(@Value("${test.minki}") String minki){
+        return "app 서버에서 테스트한 문자열: "+ minki;
+    }
+
 
     @Autowired
     private final StoreService storeService;

@@ -32,6 +32,7 @@ public class StoreFileController {
     @Autowired
     private StoreFileService storeFileService;
 
+    //디렉토리 경로설정
     private final static String imageDirectory = Paths.get("").toAbsolutePath()+"/images/";
 
     //(디렉토리가 없다면) 디렉토리 만들어 주기

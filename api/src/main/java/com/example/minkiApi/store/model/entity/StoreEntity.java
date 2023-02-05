@@ -67,17 +67,17 @@ public class StoreEntity{
         this.writerId = writerId;
     }
 
-    //맛집 포스팅 정보 수정 메소드
-    public void update(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime,Long writerId){
-        this.title = title;
-        this.createdDateTime = createdDateTime;
-        this.content = content;
-        this.storeName = storeName;
-        this.address = address;
-        this.menu = menu;
-        this.travelTime = travelTime;
-        this.writerId = writerId;
-    }
+//    //맛집 포스팅 정보 수정 메소드
+//    public void update(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime,Long writerId){
+//        this.title = title;
+//        this.createdDateTime = createdDateTime;
+//        this.content = content;
+//        this.storeName = storeName;
+//        this.address = address;
+//        this.menu = menu;
+//        this.travelTime = travelTime;
+//        this.writerId = writerId;
+//    }
 
     //request VO를 Entity화 시키는 생성자
     public StoreEntity(AddStoreVo addStoreVo){

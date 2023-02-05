@@ -18,7 +18,7 @@ public interface CommentService {
 
     // 댓글 삭제
     @Transactional
-    List<Comment> deleteComment(Long commentId, Long storeId);
+    void deleteComment(Long commentId, Long storeId);
 
     //댓글 수정
     @Transactional

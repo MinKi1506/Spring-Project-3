@@ -18,7 +18,6 @@ public class ReadStoreVo {
     private int travelTime;
 
     private Long likeCount;
-
     private Long commentCount;
 
 
@@ -28,6 +27,7 @@ public class ReadStoreVo {
         this.createdDateTime = storeEntity.getCreatedDateTime();
         this.content = storeEntity.getContent();
         this.travelTime = storeEntity.getTravelTime();
+        this.likeCount = storeEntity.getLikeCount();
         this.commentCount = storeEntity.getCommentCount();
     }
 }

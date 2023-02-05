@@ -25,6 +25,7 @@ public class LikeServiceImpl implements LikeService {
         return response;
     }
 
+    //맛집 포스팅 좋아요
     @Override
     @Transactional
     public int saveLike(LikeRequestVo likeRequestVo) {
@@ -50,35 +51,4 @@ public class LikeServiceImpl implements LikeService {
         return response;
     }
 
-    //@Override
-//public int findLike(Long storeId, Long userId) {
-//
-//    //저장된 Data가 있다면 1, 없다면 0
-//    Optional<LikeEntity> findLike = likeRepository.findByStoreEntityIdAndUserEntityId(storeId, userId);
-//    if(findLike.isPresent()){
-//        return 1;
-//    }else {
-//        return 0;
-//    }
-//}
-//@Override
-//@Transactional
-//public int saveLike(Long storeId, Long userId) {
-//    Optional<LikeEntity> findLike = likeRepository.findByStoreEntityIdAndUserEntityId(storeId,userId);
-//    System.out.println("좋아요가 있는지"+findLike.isPresent());
-//
-//    if(findLike.isPresent()){
-//        likeRepository.deleteByStoreEntityIdAndUserEntityId(storeId,userId);
-////            storeRepository.minusLike(storeId); 좋아요 하나 감소
-//        return 0;
-//    } else {
-//        UserEntity userEntity = userRepository.findById(userId).get();
-//        StoreEntity storeEntity = storeRepository.findById(storeId).get();
-//
-//        LikeEntity likeEntity = LikeEntity.toLikeEntity(storeEntity, userEntity);
-//        likeRepository.save(likeEntity);
-////            storeRepository.plusLike(storeId); 좋아요 하나 증가
-//        return 1;
-//    }
-//}
 }

@@ -9,9 +9,7 @@ import StoreEdit from "../views/StoreEdit";
 import StoreDetail from "../views/StoreDetail";
 import DietHome from "../views/DietHome";
 import DietAdd from "../views/DietAdd";
-import DietEdit from "../views/DietEdit";
 import DietDetail from "../views/DietDetail";
-import DietEditt from "../views/DietEditt";
 
 Vue.use(VueRouter);
 
@@ -63,20 +61,11 @@ const routes = [
     name: "dietAdd",
     component: DietAdd,
   },
+
   {
-    path: "/dietEdit",
-    name: "dietEdit",
-    component: DietEdit,
-  },
-  {
-    path: "/dietDetail",
+    path: "/dietDetail/:dietId",
     name: "dietDetail",
     component: DietDetail,
-  },
-  {
-    path: "/dietEditt",
-    name: "dietEditt",
-    component: DietEditt,
   },
 ];
 

@@ -1,23 +1,34 @@
-#spring:
-#    datasource:
-#        url: jdbc:mariadb://localhost:3306/project3
-#        driver-class-name: org.mariadb.jdbc.Driver
-#        username: root
-#        password: 6639
-#    jpa:
-#        open-in-view: false
-#        generate-ddl: true
-#        show-sql: true
-#        hibernate:
-#            ddl-auto: update
+server:
+    port: 8083
 
-#파일 업로드 관련 스프링 설정 정보
 spring:
+    application:
+        name: config
+    profiles:
+        active: app
+    config:
+        import: optional:configserver:http://localhost:8087
+#        import: optional:configserver:192.168.50.53:8087
+
+
+    #rabbitMQ 설정
+    rabbitmq:
+        host: 100.0.0.157
+        port: 25672
+        username: minki
+        password: 1234
+
     servlet:
         multipart:
             maxFileSize: 10MB
             maxRequestSize: 20MB
             enabled: true
 
-server:
-    port: 8083
+# config client에서 Actuator 설정
+management:
+    endpoints:
+        web:
+            exposure:
+                include: busrefresh
+#        include: "*"
+

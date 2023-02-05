@@ -90,6 +90,10 @@ export default {
   font-family: "jua";
 }
 
+.smallSmallFont {
+  font-size: 20px;
+}
+
 .smallFont {
   font-size: 30px;
 }

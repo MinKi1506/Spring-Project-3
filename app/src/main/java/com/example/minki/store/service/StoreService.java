@@ -39,4 +39,7 @@ public interface StoreService {
 
     //내가올린 맛집 포스팅 갯수
     Long getCountByUserId(Long userId);
+
+    //spring cloud bus test
+    String apiConfigTest();
 }

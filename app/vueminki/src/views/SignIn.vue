@@ -15,7 +15,6 @@
         </v-col>
       </v-row>
       <v-divider></v-divider>
-      <div>{{ this.$store.state.userId }}</div>
 
       <v-row>
         <v-col class="d-flex justify-center">

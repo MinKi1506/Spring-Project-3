@@ -9,7 +9,7 @@
 
       <v-row>
         <v-col class="d-flex justify-space-around pb-4 px-4">
-          <v-card width="330px" height="120px" class="pa-3" color="#FFF9C4">
+          <v-card width="330px" height="120px" class="pa-3" color="#FFE0B2">
             <v-row>
               <v-col> 내가 좋아요한 게시물 </v-col>
             </v-row>
@@ -22,7 +22,7 @@
             </v-row>
           </v-card>
 
-          <v-card width="330px" height="120px" class="pa-3" color="#DCEDC8">
+          <v-card width="330px" height="120px" class="pa-3" color="#FFCC80">
             <v-row>
               <v-col> 최다 추천 맛집</v-col>
             </v-row>
@@ -37,7 +37,7 @@
             </v-row>
           </v-card>
 
-          <v-card width="330px" height="120px" class="pa-3" color="#B2EBF2">
+          <v-card width="330px" height="120px" class="pa-3" color="#FFB74D">
             <v-row>
               <v-col> 나의 맛집 포스팅 </v-col>
             </v-row>
@@ -50,7 +50,7 @@
             </v-row>
           </v-card>
 
-          <v-card width="330px" height="120px" class="pa-3" color="#D1C4E9">
+          <v-card width="330px" height="120px" class="pa-3" color="#FF9100">
             <v-row>
               <v-col> 나의 다이어트 포스팅</v-col>
             </v-row>
@@ -113,7 +113,7 @@
                     </v-col>
                   </v-row>
 
-                  <v-row>
+                  <!-- <v-row>
                     <v-col>
                       <v-card max-height="270">
                         <v-img
@@ -146,9 +146,9 @@
                         <span class="smallSmallFont">{{ bestStore.menu }}</span>
                       </p>
                     </v-col>
-                  </v-row>
+                  </v-row> -->
 
-                  <!-- <v-row>
+                  <v-row>
                     <v-col>
                       <v-card max-height="270">
                         <v-img
@@ -181,7 +181,7 @@
                         <span class="smallSmallFont">{{ bestStore.menu }}</span>
                       </p>
                     </v-col>
-                  </v-row> -->
+                  </v-row>
 
                   <v-divider class="my-2"></v-divider>
 
@@ -238,7 +238,7 @@
                     </v-col>
                   </v-row>
 
-                  <v-row>
+                  <!-- <v-row>
                     <v-col>
                       <v-card max-height="270">
                         <v-img
@@ -265,9 +265,9 @@
                         }}</span>
                       </p>
                     </v-col>
-                  </v-row>
+                  </v-row> -->
 
-                  <!-- <v-row>
+                  <v-row>
                     <v-col>
                       <v-card max-height="270">
                         <v-img
@@ -294,7 +294,7 @@
                         }}</span>
                       </p>
                     </v-col>
-                  </v-row> -->
+                  </v-row>
 
                   <v-divider class="my-2"></v-divider>
 
@@ -391,11 +391,6 @@ export default {
 
   components: { SideNav },
   methods: {
-    //현재 이용자의 userId 조회
-    // getUserId() {
-    //   console.log("현재 사용자의 userId: " + this.$store.state.userId);
-    // },
-
     //각종 대쉬보드 정보 가져오기
     getInfo() {
       this.getMyLikeCount();
@@ -515,8 +510,8 @@ export default {
     //해당 storeId를 가진 사진 data 가져와서 띄우기
     async fetchStoreFiles() {
       const response = await axios.get(
-        `http://localhost:8085/files/${this.bestStore.storeId}`
-        // `http://100.0.0.157:28085/files/${this.bestStore.storeId}`
+        // `http://localhost:8085/files/${this.bestStore.storeId}`
+        `http://100.0.0.157:28085/files/${this.bestStore.storeId}`
       );
       this.bestStoreFile = response.data[0];
     },
@@ -524,8 +519,8 @@ export default {
     //해당 dietId를 가진 사진 data 가져와서 띄우기
     async fetchDietFiles() {
       const response = await axios.get(
-        `http://localhost:8085/dietFiles/${this.bestDiet.dietId}`
-        // `http://100.0.0.157:28085/dietFiles/${this.bestDiet.dietId}`
+        // `http://localhost:8085/dietFiles/${this.bestDiet.dietId}`
+        `http://100.0.0.157:28085/dietFiles/${this.bestDiet.dietId}`
       );
       this.bestDietFile = response.data[0];
     },

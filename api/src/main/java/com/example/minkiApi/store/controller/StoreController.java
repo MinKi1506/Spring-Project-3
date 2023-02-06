@@ -22,9 +22,9 @@ import java.util.Optional;
 public class StoreController {
 
     //spring cloud api 테스트
-    @GetMapping("/minkiConfigTest")
+    @GetMapping("/apiConfigTest")
     public String response(@Value("${test.minki}") String minki){
-        return "테스트한 문자열: "+ minki;
+        return minki;
     }
 
     @Autowired

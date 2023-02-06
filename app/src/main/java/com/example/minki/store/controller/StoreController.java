@@ -23,9 +23,18 @@ public class StoreController {
 
 
     //spring cloud api 테스트
-    @GetMapping("/minkiConfigTest")
-    public String response(@Value("${test.minki}") String minki){
-        return "app 서버에서 테스트한 문자열: "+ minki;
+    @GetMapping("/apiConfigTest")
+    public String apiConfigTest(){
+        String response;
+        response = storeService.apiConfigTest();
+        return response;
+    }
+
+
+    //spring cloud app 테스트
+    @GetMapping("/appConfigTest")
+    public String appConfigTest(@Value("${test.minki}") String minki){
+        return minki;
     }
 
 

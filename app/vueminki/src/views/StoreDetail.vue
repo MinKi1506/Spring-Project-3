@@ -200,22 +200,22 @@
                       </v-row>
 
                       <v-row>
-                        <v-card max-height="320">
+                        <!-- <v-card max-height="320">
                           <v-img
                             max-width="600"
                             max-height="320"
                             :src="`http://localhost:8085/image/${files[0]}`"
                             alt="이미지"
                           />
+                        </v-card> -->
+                        <v-card max-height="320">
+                          <v-img
+                            max-width="600"
+                            max-height="320"
+                            :src="`http://100.0.0.157:28085/image/${files[0]}`"
+                            alt="이미지"
+                          />
                         </v-card>
-                        <!-- <v-card max-height="320">
-                        <v-img
-                          max-width="600"
-                          max-height="320"
-                          :src="`http://100.0.0.157:28085/image/${files[0]}`"
-                          alt="이미지"
-                        />
-                      </v-card> -->
                       </v-row>
                     </v-card>
                   </v-col>
@@ -603,8 +603,8 @@ export default {
     //해당 storeId를 가진 사진 data 가져와서 띄우기
     async fetchFiles() {
       const response = await axios.get(
-        `http://localhost:8085/files/${this.thisStoreId}`
-        // `http://100.0.0.157:28085/files/${this.thisStoreId}`
+        // `http://localhost:8085/files/${this.thisStoreId}`
+        `http://100.0.0.157:28085/files/${this.thisStoreId}`
       );
       this.files = response.data;
     },
@@ -637,8 +637,8 @@ export default {
           formdata.append("storeFile", this.files[0]);
           formdata.append("storeId", storeId);
           await axios
-            .post("http://localhost:8085/dto", formdata, {
-              // .post("http://100.0.0.157:28085/dto", formdata, {
+            // .post("http://localhost:8085/dto", formdata, {
+            .post("http://100.0.0.157:28085/dto", formdata, {
               headers: {
                 "Content-Type": "multipart/form-data",
               },
@@ -661,8 +661,8 @@ export default {
         console.log("현재 게시글의 사진 file name: " + this.files[0]);
         try {
           let response = await axios.delete(
-            "http://localhost:8085/deleteFile/" + this.files[0]
-            // "http://100.0.0.157:28085/deleteFile/" + this.files[0]
+            // "http://localhost:8085/deleteFile/" + this.files[0]
+            "http://100.0.0.157:28085/deleteFile/" + this.files[0]
           );
           if (response.data == 1) {
             alert("성공적으로 사진파일을 삭제했습니다!");

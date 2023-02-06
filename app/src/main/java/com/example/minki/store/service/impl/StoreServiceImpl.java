@@ -161,5 +161,17 @@ public class StoreServiceImpl implements StoreService {
         return response;
     }
 
+    //Spring Cloud Bus 테스트
+    @Override
+    public String apiConfigTest() {
+        String response;
+        response = webClient.get()
+                .uri("/apiConfigTest")
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+        return response;
+    }
+
 
 }

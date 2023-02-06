@@ -46,7 +46,6 @@ com/example/minkiApi/cheer/service/impl/CheerServiceImpl.class
 com/example/minkiApi/login/repository/UserRepository.class
 com/example/minkiApi/exception/FileException.class
 com/example/minkiApi/login/model/vo/UserSignInVo.class
-com/example/minkiApi/CloudConfig.class
 com/example/minkiApi/comment/service/CommentService.class
 com/example/minkiApi/storeFile/model/Vo/MultipartVo.class
 com/example/minkiApi/login/model/entity/UserEntity$UserEntityBuilder.class
@@ -57,7 +56,6 @@ com/example/minkiApi/store/service/StoreService.class
 com/example/minkiApi/diet/model/vo/ReadDietVo.class
 com/example/minkiApi/login/service/impl/UserServiceImpl.class
 com/example/minkiApi/dietComment/model/vo/DietCommentRequestVo.class
-com/example/minkiApi/CloudConfigController.class
 com/example/minkiApi/dietFile/controller/DietFileController.class
 com/example/minkiApi/like/service/impl/LikeServiceImpl.class
 com/example/minkiApi/store/model/vo/ReadStoreVo.class

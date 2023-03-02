@@ -13,8 +13,4 @@ public interface CheerRepository extends JpaRepository<CheerEntity, Long> {
 
     Long countByUserEntity_Id(Long userId);
 
-//    Optional<LikeEntity> findByDietEntityIdAndUserEntityId(Long dietId, Long userId);
-//
-//    void deleteByDietEntityIdAndUserEntityId(Long dietId, Long userId);
-
 }

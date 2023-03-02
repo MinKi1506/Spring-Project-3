@@ -18,7 +18,6 @@ public class StoreFileServiceImpl implements StoreFileService {
     @Autowired
     private final StoreFileRepository storeFileRepository;
 
-
     //db에 storeFile 저장
     @Override
     public String addStoreFile(MultipartVo multipartVo) {

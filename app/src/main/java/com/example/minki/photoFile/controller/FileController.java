@@ -22,12 +22,4 @@ public class FileController {
         }
         return "upload-form";
     }
-
-    //multiPartFiledml 다운로드 (웹 이미지 렌더링)
-//    @ResponseBody
-//    @GetMapping("/images/{storeFileName}")
-//    public Resource imageDownLoad(@PathVariable String storeFileName) throws MalformedURLException{
-//        return UrlResource("file:"+filestore(=파일의 절대경로 말하는듯!).findFinalPath(storeFileName));
-//    }
-
 }

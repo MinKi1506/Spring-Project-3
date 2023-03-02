@@ -116,6 +116,4 @@ public class StoreController {
         response = storeService.getCountStoreByUserId(userId);
         return  response;
     }
-
-    //내가올린 다이어트 포스팅 갯수
 }

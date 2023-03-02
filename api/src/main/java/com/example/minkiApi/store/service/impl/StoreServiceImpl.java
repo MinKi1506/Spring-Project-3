@@ -25,7 +25,6 @@ public class StoreServiceImpl implements StoreService {
     //게시글 작성
     @Override
     @Transactional
-//    public String addStore(@RequestBody AddStoreVo addStoreVo) {
     public String addStore(AddStoreVo addStoreVo) {
         String result;
         StoreEntity storeEntity = storeRepository.save(new StoreEntity(addStoreVo));

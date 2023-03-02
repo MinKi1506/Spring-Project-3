@@ -21,23 +21,4 @@ public class UserSignUpVo {
         this.email = userEntity.getEmail();
         this.password = userEntity.getPassword();
     }
-
-//    /* Dto -> Entity */
-//    public UserEntity toEntity() {
-//        UserEntity userEntity = UserEntity.builder()
-//                .name(name)
-//                .email(email)
-//                .password(password)
-//                .build();
-//
-//        return userEntity;
-//    }
-//
-//
-//    /* Entity -> Dto*/
-//    public UserSignUpVo(UserEntity userEntity){
-//        this.name = userEntity.getName();
-//        this.email = userEntity.getEmail();
-//        this.password = userEntity.getPassword();
-//    }
 }

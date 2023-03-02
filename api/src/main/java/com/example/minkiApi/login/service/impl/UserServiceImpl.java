@@ -27,7 +27,6 @@ public class UserServiceImpl implements UserService {
     public Long signUp(UserSignUpVo userSignUpVo) throws RuntimeException{
         Long response;
         validateDuplicateEmail(userSignUpVo.getEmail()); //이메일 중복검사 -> 중복 시, DuplicateEmailException예외처리
-//        userRepository.save(UserEntity.createUser(userVo));
         UserEntity result = userRepository.save(new UserEntity(userSignUpVo));
         if(null != result.getId() && !"".equals(result.getId())){
             response = result.getId();

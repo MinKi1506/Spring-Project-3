@@ -25,7 +25,6 @@ public class DietServiceImpl implements DietService {
     //게시글 작성
     @Override
     @Transactional
-//    public String addDiet(@RequestBody AddDietVo addDietVo) {
     public String addDiet(AddDietVo addDietVo) {
         String result;
         DietEntity dietEntity = dietRepository.save(new DietEntity(addDietVo));
@@ -135,8 +134,4 @@ public class DietServiceImpl implements DietService {
         response = this.dietRepository.countByWriterId(userId);
         return response;
     }
-    
-    
-    
-    
 }

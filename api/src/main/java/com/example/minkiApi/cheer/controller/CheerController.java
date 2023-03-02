@@ -16,7 +16,7 @@ public class CheerController {
     @Autowired
     CheerService cheerService;
 
-    //좋아요&좋아요 취소
+    //응원해요 & 응원해요 취소
     @PostMapping("/cheer")
     public int onCheer(@RequestBody CheerRequestVo cheerRequestVo) {
         Long dietId = cheerRequestVo.getDietId();
@@ -32,8 +32,5 @@ public class CheerController {
         cheerCount = cheerService.userCheerCount(userId);
         return cheerCount;
     }
-
-//    @GetMapping
-
 
 }

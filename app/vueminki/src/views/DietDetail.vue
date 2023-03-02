@@ -382,7 +382,7 @@ export default {
         this.item.content = response.data.content;
         this.item.goal = response.data.goal;
         this.item.period = response.data.period;
-        this.item.penalty = response.data.menu;
+        this.item.penalty = response.data.penalty;
         this.item.cheerCount = response.data.cheerCount;
         this.item.dietCommentCount = response.data.dietCommentCount;
         this.item.writerId = response.data.writerId;

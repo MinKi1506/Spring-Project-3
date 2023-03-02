@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface StoreRepository extends JpaRepository<StoreEntity, Long> {
+
     //아이디 내림차순으로 전부 가져오기
     List<StoreEntity> findAllByOrderByIdDesc();
 

@@ -26,7 +26,6 @@ import java.util.stream.Stream;
 
 @Log4j2
 @RestController
-//@CrossOrigin("*")
 public class StoreFileController {
 
     @Autowired
@@ -52,6 +51,7 @@ public class StoreFileController {
             writer.write(multipartFile.getBytes());
             storeFileService.addStoreFile(multipartVo);    //db에 저장
         } catch (Exception e) {
+            System.out.println("에러: "+ e);
             return "파일 업로드 실패";
         }
         return "파일 업로드 성공";
@@ -99,10 +99,6 @@ public class StoreFileController {
             System.out.println(":::::"+storeFileName);
         }
         return newList;
-//        return Stream.of(new File(imageDirectory).listFiles())
-//                .filter(old -> filteredFileList.anyMatch(Predicate.isEqual()))
-//                .map(File::getName)
-//                .collect(Collectors.toList());
     }
 
     //프론트(Vue)단에서 보낸 multipartFile/FormData 내부에 "files"라는 이름의 파일들이 서버로 전달된다.
@@ -144,20 +140,3 @@ public class StoreFileController {
        return response;
    }
 }
-
-
-
-
-
-
-    //    //db에서 storeId로 뽑아온다 -> 이걸 array로 정의하여 array내부의 값들(path)과 일치하는 사진만 뿌려준다
-//    @GetMapping("/files/{storeId}")
-//    public List<String> getFileNames(@PathVariable Long storeId){
-//        List<StoreFileEntity> filteredFileList = storeFileService.getStoreFileListByStoreId(storeId);
-//
-//        return Stream.of(new File(imageDirectory).listFiles())
-//                .filter(list -> list.equals(filteredFileList))
-//                .map(File::getName)
-//                .collect(Collectors.toList());
-//    }
-

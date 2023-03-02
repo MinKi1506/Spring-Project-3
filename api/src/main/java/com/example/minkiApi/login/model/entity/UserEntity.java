@@ -45,23 +45,14 @@ public class UserEntity{
         this.password = password;
     }
 
-    //유저 정보 수정 메소드
-    public void update(String name, int age, int gender, String team, String email, String password) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.team = team;
-        this.email = email;
-        this.password = password;
-    }
-
-    //VO를 Entity화 시키는 생성자
+    //User회원가입 VO를 Entity화 시키는 생성자
     public UserEntity(UserSignUpVo userSignUpVo) {
         this.name = userSignUpVo.getName();
         this.email = userSignUpVo.getEmail();
         this.password = userSignUpVo.getPassword();
     }
 
+    //User로그인 VO를 Entity화 시키는 생성자
     public UserEntity(UserSignInVo userSignInVo) {
         this.email = userSignInVo.getEmail();
         this.password = userSignInVo.getPassword();

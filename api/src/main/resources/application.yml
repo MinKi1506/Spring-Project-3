@@ -8,9 +8,7 @@ spring:
     active: api
   config:
 #    import: optional:configserver:http://localhost:8087
-#    import: optional:configserver:192.168.50.53:8087
     import: optional:configserver:http://192.168.50.53:8087
-
 
   #로컬 DB 설정
 #  datasource:
@@ -20,14 +18,13 @@ spring:
 #    password: 6639
 
 #VM DB설정
-  datasource:
-    url: jdbc:mariadb://192.168.50.15:3306/project3
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: root
-    password: alsrl123
+#  datasource:
+#    url: jdbc:mariadb://192.168.50.15:3306/project3
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    username: root
+#    password: alsrl123
 
   jpa:
-#    database: mysql
     open-in-view: false
     generate-ddl: true
     show-sql: true
@@ -55,4 +52,3 @@ management:
       exposure:
         include: busrefresh
 #        include: "*"
-

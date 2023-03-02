@@ -25,10 +25,6 @@ public interface DietRepository extends JpaRepository<DietEntity, Long> {
     List<DietEntity> findByContentContaining(String content);
 
     //최다 추천(Best) 맛집
-    @Query(value = "select * from diet_entity where cheer_count = (select MAX(cheer_count) from diet_entity", nativeQuery = true)
-    DietEntity findBestDiet();
-
-    //최다 추천(Best) 맛집
     DietEntity findTop1ByOrderByCheerCountDesc();
 
     //유저가 업로드한 맛집 포스팅 갯수

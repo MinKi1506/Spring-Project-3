@@ -96,10 +96,6 @@ public class DietFileController {
             System.out.println(":::::"+dietFileName);
         }
         return newList;
-//        return Stream.of(new File(imageDirectory).listFiles())
-//                .filter(old -> filteredFileList.anyMatch(Predicate.isEqual()))
-//                .map(File::getName)
-//                .collect(Collectors.toList());
     }
 
     //프론트(Vue)단에서 보낸 multipartFile/FormData 내부에 "files"라는 이름의 파일들이 서버로 전달된다.
@@ -122,7 +118,6 @@ public class DietFileController {
     @DeleteMapping("/deleteDietFile/{dietFileName}")
     public int deleteFile(@PathVariable String dietFileName) {
         int response;
-//        String realFileName = fileName.substring(0, fileName.length() - 1); //받아온 fileName에 자꾸 =가 붙어서 이것을 제거해주는 역할
         String filePath = imageDirectory + dietFileName;
         File toDeleteFile = new File(filePath);
 

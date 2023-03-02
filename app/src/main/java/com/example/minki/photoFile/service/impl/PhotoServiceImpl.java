@@ -17,7 +17,6 @@ import java.util.UUID;
 @Slf4j
 public class PhotoServiceImpl implements PhotoService {
 
-
     @Override
     public FileVo saveFile(MultipartFile multipartFile) throws IOException {
         //예외 체크

@@ -49,10 +49,6 @@ public class StoreEntity{
     @OneToMany(mappedBy = "storeEntity", orphanRemoval = true, fetch = FetchType.LAZY)
     private List<LikeEntity> likeEntityList;
 
-//
-//    @OneToMany(mappedBy = "store", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-//    private List<Attachments> attachments = new ArrayList<>();
-
     @Builder // builder = 클래스 자동생성 -> 생성자 대신 사용
     public StoreEntity(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime, Long writerId){
         this.title = title;
@@ -66,18 +62,6 @@ public class StoreEntity{
         this.commentCount = 0L;
         this.writerId = writerId;
     }
-
-//    //맛집 포스팅 정보 수정 메소드
-//    public void update(String title, LocalDateTime createdDateTime, String content, String storeName, String address, String menu, int travelTime,Long writerId){
-//        this.title = title;
-//        this.createdDateTime = createdDateTime;
-//        this.content = content;
-//        this.storeName = storeName;
-//        this.address = address;
-//        this.menu = menu;
-//        this.travelTime = travelTime;
-//        this.writerId = writerId;
-//    }
 
     //request VO를 Entity화 시키는 생성자
     public StoreEntity(AddStoreVo addStoreVo){
